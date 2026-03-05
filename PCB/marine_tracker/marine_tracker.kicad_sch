@@ -822,6 +822,196 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:Screw_Terminal_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Screw_Terminal_01x02"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "screw terminal"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TerminalBlock*:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Screw_Terminal_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 0.3302) (xy 0.3302 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 -2.2098) (xy 0.3302 -3.048)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 0.508) (xy 0.508 -0.3302)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 -2.032) (xy 0.508 -2.8702)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 -2.54)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:Antenna"
 			(pin_numbers
 				(hide yes)
@@ -925,210 +1115,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Device:Battery_Cell"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "BT"
-				(at 2.54 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "Battery_Cell"
-				(at 2.54 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 1.524 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 1.524 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Single-cell battery"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Device" "V"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Type" "DC"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=+ 2=-"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "battery cell"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Battery_Cell_0_1"
-				(rectangle
-					(start -2.286 1.778)
-					(end 2.286 1.524)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -1.524 1.016)
-					(end 1.524 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.778) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0.762) (xy 0 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 3.048) (xy 1.778 3.048)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 3.556) (xy 1.27 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Battery_Cell_1_1"
-				(pin passive line
-					(at 0 5.08 270)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5552,7 +5538,7 @@
 		)
 	)
 	(rectangle
-		(start 225.552 27.94)
+		(start 231.902 27.94)
 		(end 303.53 78.74)
 		(stroke
 			(width 0.254)
@@ -5649,7 +5635,7 @@
 	)
 	(text "LiPo 1S (3.5V-4.2V) to 3.3V LDO"
 		(exclude_from_sim no)
-		(at 248.666 25.654 0)
+		(at 254 25.654 0)
 		(effects
 			(font
 				(size 1.778 1.778)
@@ -5754,7 +5740,7 @@
 	)
 	(text "LDO Characteristics"
 		(exclude_from_sim no)
-		(at 279.654 69.342 0)
+		(at 272.796 69.088 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5824,7 +5810,7 @@
 	)
 	(text "Input range : 2.5V to 5.5V\nOutput : 3.3V\nOutput current : 300mA"
 		(exclude_from_sim no)
-		(at 270.002 74.676 0)
+		(at 263.144 74.422 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5892,12 +5878,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "33fd08f9-e1df-4281-8c57-00312ab2dc6e")
-	)
-	(junction
-		(at 243.078 43.18)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "37b4b66e-016c-416b-8eb2-1d564b909cea")
 	)
 	(junction
 		(at 100.838 183.134)
@@ -5982,6 +5962,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a3a01e6a-e7ec-448c-be9c-6e565e8fd980")
+	)
+	(junction
+		(at 249.174 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a789954a-7942-4593-89d6-fcbfbcee2f23")
 	)
 	(junction
 		(at 123.698 37.846)
@@ -6207,6 +6193,16 @@
 	)
 	(wire
 		(pts
+			(xy 249.174 43.18) (xy 259.08 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02d55acf-2eea-42ba-b324-0716ce4c96a0")
+	)
+	(wire
+		(pts
 			(xy 277.876 108.966) (xy 280.67 108.966)
 		)
 		(stroke
@@ -6277,7 +6273,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.078 41.91) (xy 243.078 43.18)
+			(xy 249.174 41.402) (xy 249.174 43.18)
 		)
 		(stroke
 			(width 0)
@@ -6657,7 +6653,17 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 45.72) (xy 233.68 43.18)
+			(xy 249.174 50.546) (xy 249.174 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34008f97-5c97-4361-98cf-a7d25e8d1c1a")
+	)
+	(wire
+		(pts
+			(xy 249.174 48.006) (xy 249.174 43.18)
 		)
 		(stroke
 			(width 0)
@@ -7177,7 +7183,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 57.15) (xy 259.08 57.15)
+			(xy 249.174 57.15) (xy 259.08 57.15)
 		)
 		(stroke
 			(width 0)
@@ -7194,26 +7200,6 @@
 			(type default)
 		)
 		(uuid "876e459a-f671-40bb-9552-6f2ff17174fc")
-	)
-	(wire
-		(pts
-			(xy 233.68 43.18) (xy 243.078 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "88b4fd7a-7570-402a-9aa6-1422619c19c0")
-	)
-	(wire
-		(pts
-			(xy 243.078 43.18) (xy 259.08 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "895503b9-fea7-49d1-81fb-4947d65083ce")
 	)
 	(wire
 		(pts
@@ -7304,16 +7290,6 @@
 			(type default)
 		)
 		(uuid "91e776a1-0942-4287-9f55-0e08a49e571a")
-	)
-	(wire
-		(pts
-			(xy 233.68 53.34) (xy 233.68 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "92676dc8-2fb1-4812-8d75-74882b73bbcc")
 	)
 	(wire
 		(pts
@@ -11004,102 +10980,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Battery_Cell")
-		(at 233.68 50.8 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "587b95f0-306f-4f3f-9519-311aed361007")
-		(property "Reference" "BT1"
-			(at 236.728 47.752 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Battery_Cell"
-			(at 234.95 52.832 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 233.68 49.276 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 233.68 49.276 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Single-cell battery"
-			(at 233.68 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "V"
-			(at 233.68 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" "DC"
-			(at 233.68 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=+ 2=-"
-			(at 233.68 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ccc7dd08-1420-475e-bdf1-8be9c0129171")
-		)
-		(pin "1"
-			(uuid "ef0063d1-f473-47c1-92c7-a86e12399c4a")
-		)
-		(instances
-			(project ""
-				(path "/aea3082a-ee68-43bf-ab65-cce2ba7d897e"
-					(reference "BT1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 265.43 168.656 0)
 		(unit 1)
@@ -11795,7 +11675,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 243.078 41.91 0)
+		(at 249.174 41.402 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11804,7 +11684,7 @@
 		(fields_autoplaced yes)
 		(uuid "6d3a1bcd-2ebb-445f-a350-58e73bf0d6b8")
 		(property "Reference" "#FLG01"
-			(at 243.078 40.005 0)
+			(at 249.174 39.497 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11813,7 +11693,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 243.078 36.83 0)
+			(at 249.174 36.322 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11821,7 +11701,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 243.078 41.91 0)
+			(at 249.174 41.402 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11830,7 +11710,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 243.078 41.91 0)
+			(at 249.174 41.402 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11839,7 +11719,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 243.078 41.91 0)
+			(at 249.174 41.402 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13156,6 +13036,100 @@
 			(project "marine_tracker"
 				(path "/aea3082a-ee68-43bf-ab65-cce2ba7d897e"
 					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 244.094 50.546 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b00edaa2-ebef-4843-8bec-d921cd448a07")
+		(property "Reference" "J1"
+			(at 244.094 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 245.618 53.848 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Beuns_PCBFootprint:Screw_terminal_1x2"
+			(at 244.094 50.546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588887094307119105"
+			(at 244.094 50.546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "-40℃~+105℃ 1 1.5 14~26 15A 1x2P 2 250V 2P 5mm Green Through Hole Plugin,P=5mm Screw Terminal Blocks ROHS"
+			(at 244.094 50.546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Ningbo Kangnex Elec"
+			(at 244.094 50.546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "WJ127-5.0-02P-14-00A"
+			(at 244.094 50.546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part Number" " C3703"
+			(at 244.094 50.546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1407aa38-bd67-4efd-bf6b-4a7a27b21d42")
+		)
+		(pin "2"
+			(uuid "818d8526-3d4f-4f07-96c2-02a79507fbce")
+		)
+		(instances
+			(project ""
+				(path "/aea3082a-ee68-43bf-ab65-cce2ba7d897e"
+					(reference "J1")
 					(unit 1)
 				)
 			)
