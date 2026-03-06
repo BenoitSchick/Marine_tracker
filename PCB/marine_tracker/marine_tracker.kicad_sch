@@ -2618,7 +2618,7 @@
 				)
 			)
 			(property "Value" "16MHz"
-				(at -4.318 5.334 0)
+				(at -1.27 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2826,6 +2826,25 @@
 						)
 					)
 					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 1.27)
+					(hide yes)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -13944,6 +13963,9 @@
 		)
 		(pin "4"
 			(uuid "b941e967-9d30-48cb-bdd4-532361d321ac")
+		)
+		(pin "2"
+			(uuid "2c602941-c421-4d15-96d8-bd09a08cb982")
 		)
 		(instances
 			(project ""
