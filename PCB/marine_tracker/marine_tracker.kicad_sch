@@ -8863,7 +8863,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 123.698) (xy 122.682 123.698)
+			(xy 119.38 123.698) (xy 141.986 123.698)
 		)
 		(stroke
 			(width 0)
@@ -9103,7 +9103,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 244.856) (xy 55.118 244.856)
+			(xy 53.34 244.856) (xy 62.738 244.856)
 		)
 		(stroke
 			(width 0)
@@ -9593,7 +9593,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.594 249.936) (xy 55.118 249.936)
+			(xy 53.594 249.936) (xy 62.738 249.936)
 		)
 		(stroke
 			(width 0)
@@ -10283,7 +10283,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 121.158) (xy 122.682 121.158)
+			(xy 119.38 121.158) (xy 141.986 121.158)
 		)
 		(stroke
 			(width 0)
@@ -10981,6 +10981,16 @@
 		)
 		(uuid "24f25d93-7b38-4aad-84d2-6cf3985ae618")
 	)
+	(label "USB_D+"
+		(at 141.986 123.698 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2ec2d396-53d5-42de-9aac-8093e115cf6b")
+	)
 	(label "HSE_IN"
 		(at 70.612 98.298 0)
 		(effects
@@ -11000,6 +11010,16 @@
 			(justify left bottom)
 		)
 		(uuid "64665b47-dccc-4832-8671-b30600a78666")
+	)
+	(label "USB_D-"
+		(at 141.986 121.158 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6a65cebf-7db3-4389-80b7-13eec833b979")
 	)
 	(label "LED3"
 		(at 97.79 252.476 0)
@@ -11051,6 +11071,16 @@
 		)
 		(uuid "ab1d5c15-fcb5-44e9-a1d7-9ae61076ba0e")
 	)
+	(label "USB_D-"
+		(at 62.738 244.856 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ae3cff4b-ee11-4eb5-afa0-2e00041523bb")
+	)
 	(label "VCAP"
 		(at 77.47 156.718 0)
 		(effects
@@ -11100,6 +11130,16 @@
 			(justify left bottom)
 		)
 		(uuid "db0819e1-7d05-4474-b6b2-0535a0614565")
+	)
+	(label "USB_D+"
+		(at 62.738 249.936 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "dff24060-a0d8-48d7-9e23-dfc3117876a8")
 	)
 	(label "LED2"
 		(at 97.79 249.936 0)
@@ -11151,30 +11191,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "USB_D-"
-		(shape input)
-		(at 55.118 244.856 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.143 1.143)
-				(thickness 0.2286)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "1bef467c-f99a-419f-8d5a-d64b11b9adab")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 65.091 244.856 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -11395,7 +11411,7 @@
 			)
 		)
 	)
-	(global_label "MEM_SPI1_SCK"
+	(global_label "MEM_SPI3_SCK"
 		(shape input)
 		(at 81.026 138.938 180)
 		(fields_autoplaced yes)
@@ -11731,30 +11747,6 @@
 			)
 		)
 	)
-	(global_label "USB_D+"
-		(shape input)
-		(at 55.118 249.936 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.143 1.143)
-				(thickness 0.2286)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "8b5cb018-d234-437c-a276-ccc3af7dcb8d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 65.091 249.936 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "SAT_RXD"
 		(shape input)
 		(at 122.682 98.298 0)
@@ -11995,30 +11987,6 @@
 			)
 		)
 	)
-	(global_label "USB_D-"
-		(shape input)
-		(at 122.682 121.158 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.143 1.143)
-				(thickness 0.254)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "c51a6a72-8741-4718-aefd-825ef14b1a42")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 132.782 121.158 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "SAT_RTS"
 		(shape input)
 		(at 323.088 200.66 180)
@@ -12231,30 +12199,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "USB_D+"
-		(shape input)
-		(at 122.682 123.698 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.143 1.143)
-				(thickness 0.2286)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "eaa36257-f485-418f-be8b-96624aadd9de")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 132.655 123.698 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)

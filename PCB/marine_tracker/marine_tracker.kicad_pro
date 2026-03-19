@@ -58,7 +58,7 @@
           "width": 0.0
         },
         {
-          "gap": 0.22,
+          "gap": 0.29,
           "via_gap": 0.5,
           "width": 0.17
         }
@@ -193,7 +193,7 @@
       ],
       "track_widths": [
         0.0,
-        0.15,
+        0.17,
         0.2,
         0.3,
         0.5,
@@ -500,6 +500,20 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "name": "RF",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)"
+      },
+      {
+        "diff_pair_gap": 0.29,
+        "diff_pair_width": 0.17,
+        "name": "USB",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)"
       }
     ],
     "meta": {
@@ -514,6 +528,10 @@
       {
         "netclass": "Default",
         "pattern": "+3V3"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "/USB_D*"
       }
     ]
   },
