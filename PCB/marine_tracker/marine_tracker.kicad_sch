@@ -1891,23 +1891,25 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "J"
-				(at 0.254 3.048 0)
+			(property "Reference" "J6"
+				(at 3.556 0.9769 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Value" "Conn_Coaxial"
-				(at 2.921 0 90)
+				(at 3.556 -1.5631 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1916,7 +1918,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1925,7 +1927,34 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer Part Number" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Digikey Part Number" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -2043,6 +2072,25 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(hide yes)
+					(name "Ext2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -7167,8 +7215,8 @@
 		(uuid 62d8c4b9-03c7-47d5-9b2e-1c31b1284d00)
 	)
 	(rectangle
-		(start 297.434 185.166)
-		(end 332.486 221.234)
+		(start 296.164 185.166)
+		(end 332.486 232.664)
 		(stroke
 			(width 0.254)
 			(type dash)
@@ -7650,6 +7698,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9c2c1c68-4d63-412c-84b4-5491c748198e")
+	)
+	(junction
+		(at 308.864 214.63)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9d4dbe1e-29e4-4064-bcb6-ca1306d55639")
 	)
 	(junction
 		(at 309.626 42.672)
@@ -9705,6 +9759,16 @@
 	)
 	(wire
 		(pts
+			(xy 308.864 223.266) (xy 308.864 224.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3a7590d-b15e-42c4-a285-8879678cf23a")
+	)
+	(wire
+		(pts
 			(xy 303.022 207.264) (xy 303.022 209.55)
 		)
 		(stroke
@@ -10462,6 +10526,16 @@
 			(type default)
 		)
 		(uuid "e79d262c-1582-49a5-bfa2-a41e3cc743f8")
+	)
+	(wire
+		(pts
+			(xy 308.864 214.63) (xy 308.864 215.646)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7c67d03-997c-4726-a04c-6dfcdf041e7e")
 	)
 	(wire
 		(pts
@@ -14067,6 +14141,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 308.864 224.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3e46bb22-cc23-4142-a4a3-3fdcdeb1a285")
+		(property "Reference" "#PWR032"
+			(at 308.864 231.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 308.864 229.108 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 308.864 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 308.864 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 308.864 224.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6f98ef47-b6b5-4fc0-b28d-339c473deacd")
+		)
+		(instances
+			(project "marine_tracker"
+				(path "/aea3082a-ee68-43bf-ab65-cce2ba7d897e"
+					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 362.712 41.656 0)
 		(unit 1)
@@ -14310,7 +14450,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount"
+		(property "Footprint" "Beuns_PCBFootprint:CONN_UFL_RSP-122811-01_SAI"
 			(at 345.186 121.92 0)
 			(effects
 				(font
@@ -14319,7 +14459,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://s3-us-west-2.amazonaws.com/catsy.582/132289.pdf"
+		(property "Datasheet" ""
 			(at 345.186 121.92 0)
 			(effects
 				(font
@@ -14328,7 +14468,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "SMA Connector Receptacle, Female Socket 50 Ohms Board Edge, End Launch; Panel Mount Solder"
+		(property "Description" ""
 			(at 345.186 121.92 0)
 			(effects
 				(font
@@ -14337,7 +14477,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Amphenol RF"
+		(property "Manufacturer" ""
 			(at 345.186 121.92 0)
 			(effects
 				(font
@@ -14346,7 +14486,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "132289"
+		(property "Manufacturer Part Number" ""
 			(at 345.186 121.92 0)
 			(effects
 				(font
@@ -14355,7 +14495,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey Part Number" "ACX1426-ND"
+		(property "Digikey Part Number" ""
 			(at 345.186 121.92 0)
 			(effects
 				(font
@@ -14369,6 +14509,9 @@
 		)
 		(pin "2"
 			(uuid "6e7e1c40-936b-450e-b4cc-69fe2c4da53b")
+		)
+		(pin "3"
+			(uuid "005adcee-7a67-4213-ab04-60c5852e843a")
 		)
 		(instances
 			(project "marine_tracker"
@@ -16890,6 +17033,156 @@
 			(project "marine_tracker"
 				(path "/aea3082a-ee68-43bf-ab65-cce2ba7d897e"
 					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 308.864 219.456 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8689d4ac-a1ca-4dec-b23c-1c06566354d8")
+		(property "Reference" "C16"
+			(at 304.546 216.662 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 303.784 221.742 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 309.8292 223.266 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" ""
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" ""
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part Number" ""
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "944481e7-48eb-4a27-b991-10b0793429eb")
+		)
+		(pin "1"
+			(uuid "e7228cb5-932d-4c52-bb56-67c3cbbfad56")
+		)
+		(instances
+			(project "marine_tracker"
+				(path "/aea3082a-ee68-43bf-ab65-cce2ba7d897e"
+					(reference "C16")
 					(unit 1)
 				)
 			)

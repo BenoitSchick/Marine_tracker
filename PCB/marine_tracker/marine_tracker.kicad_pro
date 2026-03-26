@@ -195,6 +195,7 @@
         0.0,
         0.17,
         0.2,
+        0.25,
         0.3,
         0.5,
         1.0
@@ -504,15 +505,23 @@
       {
         "name": "RF",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 1,
+        "priority": 2,
         "schematic_color": "rgba(0, 0, 0, 0.000)"
       },
       {
-        "diff_pair_gap": 0.29,
-        "diff_pair_width": 0.17,
-        "name": "USB",
+        "clearance": 0.5,
+        "name": "RF_ANT",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.37
+      },
+      {
+        "diff_pair_gap": 0.17,
+        "diff_pair_width": 0.25,
+        "name": "USB",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)"
       }
     ],
@@ -532,6 +541,10 @@
       {
         "netclass": "USB",
         "pattern": "/USB_D*"
+      },
+      {
+        "netclass": "RF_ANT",
+        "pattern": "/RF_ANT"
       }
     ]
   },
