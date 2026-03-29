@@ -1117,6 +1117,225 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "BeunsLibrary:PTS815_SJM_250_SMTR_LFS"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW2"
+				(at 10.414 -0.508 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "SW_Push"
+				(at 10.922 -3.048 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "Beuns_PCBFootprint:SW4_PTS815 SJM 250 SMTR LFS_CNK_btnPoussoir"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ckswitches.com/media/2728/pts815.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "SWITCH TACTILE SPST-NO 0.05A 12V"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer" "C&K"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer Part Number" "PTS815SJM250SMTRLFS"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Digikey Part Number" "CKN12215-2-ND"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "PTS815 SJM 250 SMTR LFS"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SW4_PTS815 SJM 250 SMTR LFS_CNK"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PTS815_SJM_250_SMTR_LFS_0_1"
+				(circle
+					(center 9.2964 -6.604)
+					(radius 0.127)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.668 -4.826) (xy 12.4714 -6.5532)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 12.5476 -6.604)
+					(radius 0.127)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "PTS815_SJM_250_SMTR_LFS_1_1"
+				(pin passive line
+					(at 6.604 -6.604 0)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 6.604 -6.604 0)
+					(length 2.54)
+					(hide yes)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 -6.604 180)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 15.24 -6.604 180)
+					(length 2.54)
+					(hide yes)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:Conn_01x08_Pin"
 			(pin_names
 				(offset 1.016)
@@ -6438,156 +6657,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_Push"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW"
-				(at 1.27 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "SW_Push"
-				(at 0 -1.524 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Push button switch, generic, two pins"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "switch normally-open pushbutton push-button"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SW_Push_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 1.27) (xy -2.54 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+3V3"
 			(power)
 			(pin_numbers
@@ -7526,12 +7595,6 @@
 		(uuid "038aa7dd-ce10-41c0-b6ae-7226373c82c4")
 	)
 	(junction
-		(at 38.1 138.938)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0bfb5c4a-74b0-422a-8be6-9b150ef59881")
-	)
-	(junction
 		(at 211.074 255.27)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7614,6 +7677,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6c7ea38a-86e4-4df6-8b5c-ab0b475914bc")
+	)
+	(junction
+		(at 38.1 139.192)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "72a2d132-1e34-4f4b-a091-f15de7b92342")
 	)
 	(junction
 		(at 101.6 83.058)
@@ -8089,16 +8158,6 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 138.938) (xy 38.1 138.938)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "070e06a9-2b1c-4f38-9a1b-795f27cfd5b0")
-	)
-	(wire
-		(pts
 			(xy 99.06 85.598) (xy 99.06 83.058)
 		)
 		(stroke
@@ -8519,16 +8578,6 @@
 	)
 	(wire
 		(pts
-			(xy 20.32 135.128) (xy 20.32 138.938)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2f2f72a2-c537-4299-9908-164d4fdb4531")
-	)
-	(wire
-		(pts
 			(xy 124.46 38.862) (xy 132.08 38.862)
 		)
 		(stroke
@@ -8549,6 +8598,16 @@
 	)
 	(wire
 		(pts
+			(xy 26.162 139.192) (xy 23.622 139.192)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fedf814-e992-43a0-b710-09de2aea2478")
+	)
+	(wire
+		(pts
 			(xy 356.362 39.878) (xy 356.362 41.148)
 		)
 		(stroke
@@ -8556,16 +8615,6 @@
 			(type default)
 		)
 		(uuid "305b981a-c935-4efc-9e1d-57e88a576ab5")
-	)
-	(wire
-		(pts
-			(xy 20.32 138.938) (xy 22.86 138.938)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "30a5a5ac-a43b-4c19-874b-27fae05404bb")
 	)
 	(wire
 		(pts
@@ -8679,6 +8728,16 @@
 	)
 	(wire
 		(pts
+			(xy 34.798 139.192) (xy 38.1 139.192)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3673adb9-0757-4f7c-9362-4b9da391841a")
+	)
+	(wire
+		(pts
 			(xy 118.618 249.936) (xy 128.524 249.936)
 		)
 		(stroke
@@ -8686,6 +8745,26 @@
 			(type default)
 		)
 		(uuid "3692d763-6354-4d88-b095-03ee47b6ab0f")
+	)
+	(wire
+		(pts
+			(xy 23.622 137.16) (xy 23.622 139.192)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36e329b3-7066-48d0-b253-c1ba47482e05")
+	)
+	(wire
+		(pts
+			(xy 38.1 138.938) (xy 38.1 139.192)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "386308ec-6d9c-41ed-bc79-765f38ef1ca2")
 	)
 	(wire
 		(pts
@@ -10009,16 +10088,6 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 138.938) (xy 38.1 140.208)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bc4d56d1-916d-47d9-bb52-606a75a6710f")
-	)
-	(wire
-		(pts
 			(xy 320.548 129.54) (xy 323.85 129.54)
 		)
 		(stroke
@@ -10756,6 +10825,16 @@
 			(type default)
 		)
 		(uuid "f746a3ab-b83f-482d-b245-6086cfe2927e")
+	)
+	(wire
+		(pts
+			(xy 38.1 139.192) (xy 38.1 140.208)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f983fd63-da7e-49ee-b096-94f643b48057")
 	)
 	(wire
 		(pts
@@ -12228,6 +12307,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 169.672 100.838 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e82f0af6-2752-410d-8a5c-c5a93ee83001")
 		)
@@ -12445,7 +12533,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 20.32 135.128 0)
+		(at 23.622 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12454,7 +12542,7 @@
 		(fields_autoplaced yes)
 		(uuid "11761462-0467-43b6-a608-98759353b8d0")
 		(property "Reference" "#PWR017"
-			(at 20.32 138.938 0)
+			(at 23.622 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12463,7 +12551,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 20.32 130.048 0)
+			(at 23.622 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12471,7 +12559,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 20.32 135.128 0)
+			(at 23.622 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12480,7 +12568,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 20.32 135.128 0)
+			(at 23.622 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12489,7 +12577,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 20.32 135.128 0)
+			(at 23.622 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12637,6 +12725,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 121.92 66.548 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 121.92 66.548 0)
 			(effects
 				(font
@@ -12930,6 +13027,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 367.538 50.546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "68890af8-454a-41d1-a625-8c64f85338d2")
 		)
@@ -13053,7 +13159,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/61300811121.pdf"
 			(at 329.692 207.01 0)
 			(effects
 				(font
@@ -13062,7 +13168,34 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x08, script generated"
+		(property "Description" "CONN HEADER VERT 8POS 2.54MM"
+			(at 329.692 207.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" "61300811121"
+			(at 329.692 207.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part Number" "732-5321-ND"
+			(at 329.692 207.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Würth Elektronik"
 			(at 329.692 207.01 0)
 			(effects
 				(font
@@ -13206,7 +13339,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8589030979529162752"
+		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/25CSM04-4-Mbit-SPI-Serial-EEPROM-With-128-Bit-Serial-Number-and-Enhanced-Write-Protection-20005817C.pdf"
 			(at 188.722 135.382 0)
 			(effects
 				(font
@@ -13242,7 +13375,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" " C1513065"
+		(property "Digikey Part Number" "150-25CSM04T-I/SNTR-ND"
 			(at 186.182 115.062 0)
 			(effects
 				(font
@@ -13297,6 +13430,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 186.182 115.062 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 186.182 115.062 0)
 			(effects
 				(font
@@ -13536,6 +13678,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 63.5 165.608 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "63492cb0-1754-4f0d-a263-b6ce09b94332")
 		)
@@ -13588,7 +13739,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf"
+		(property "Datasheet" "https://sensirion.com/media/documents/33FD6951/67EB9032/HT_DS_Datasheet_SHT4x_5.pdf"
 			(at 298.196 60.452 0)
 			(effects
 				(font
@@ -13598,7 +13749,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "-40℃~+125℃ 0%RH~100%RH 1.08V~3.6V 16bit 400nA I2C ±0.2℃ ±1.8%RH DFN-4-EP(1.5x1.5) Temperature and Humidity Sensor ROHS"
+		(property "Description" "SENSOR HUMIDITY 100 RH SMD"
 			(at 294.386 51.562 0)
 			(effects
 				(font
@@ -13607,7 +13758,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Sensirion"
+		(property "Manufacturer" "Sensirion AG"
 			(at 294.386 51.562 0)
 			(effects
 				(font
@@ -13625,61 +13776,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" " C2848306"
-			(at 294.386 51.562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 294.386 51.562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 294.386 51.562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 294.386 51.562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
-			(at 294.386 51.562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "KLC_S3.3" ""
-			(at 294.386 51.562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "KLC_S4.1" ""
+		(property "Digikey Part Number" "1649-SHT40-AD1B-R3TR-ND"
 			(at 294.386 51.562 0)
 			(effects
 				(font
@@ -13845,6 +13942,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 124.46 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0a33e763-ec3b-4e84-bd59-65c9cc8bfc44")
 		)
@@ -13920,155 +14026,6 @@
 			(project "marine_tracker"
 				(path "/aea3082a-ee68-43bf-ab65-cce2ba7d897e"
 					(reference "#PWR046")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 27.94 138.938 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3ac1b88c-0b91-4690-b292-967a98dc9219")
-		(property "Reference" "SW1"
-			(at 27.94 131.318 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_Push"
-			(at 27.94 133.858 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Button_Switch_SMD:SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS"
-			(at 27.94 133.858 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 27.94 133.858 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "-20℃~+70℃ 100,000 Cycles 12V 2.5N 2.5mm 3.6mm 50mA 6mm Gull Wing No Rectangular Button Red SPST Surface Mount,Vertical Without Bracket SMD,6x3.5mm Tactile Switches ROHS"
-			(at 27.94 138.938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer" " USAKRO"
-			(at 27.94 138.938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer Part Number" "UK-B0240-R-250 "
-			(at 27.94 138.938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" "C556660"
-			(at 27.94 138.938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 27.94 138.938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 27.94 138.938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 27.94 138.938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
-			(at 27.94 138.938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "KLC_S3.3" ""
-			(at 27.94 138.938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "KLC_S4.1" ""
-			(at 27.94 138.938 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "4acd2787-9d9b-4bd4-b9a6-a90825a32b01")
-		)
-		(pin "1"
-			(uuid "a791ca60-340f-4b33-ba2f-96f63dbae8bb")
-		)
-		(instances
-			(project "marine_tracker"
-				(path "/aea3082a-ee68-43bf-ab65-cce2ba7d897e"
-					(reference "SW1")
 					(unit 1)
 				)
 			)
@@ -14341,6 +14298,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 362.712 41.656 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "638206d6-4f19-4d38-97c7-15894f1ef99e")
 		)
@@ -14459,7 +14425,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6210/rsp-122811-01-mkt.pdf"
 			(at 345.186 121.92 0)
 			(effects
 				(font
@@ -14468,7 +14434,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CONN UMC RCPT STR 50 OHM SMD"
 			(at 345.186 121.92 0)
 			(effects
 				(font
@@ -14477,7 +14443,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "Samtec Inc."
 			(at 345.186 121.92 0)
 			(effects
 				(font
@@ -14486,7 +14452,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
+		(property "Manufacturer Part Number" "RSP-122811-01"
 			(at 345.186 121.92 0)
 			(effects
 				(font
@@ -14495,7 +14461,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey Part Number" ""
+		(property "Digikey Part Number" "612-RSP-122811-01TR-ND"
 			(at 345.186 121.92 0)
 			(effects
 				(font
@@ -14592,7 +14558,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" "C6554955"
+		(property "Digikey Part Number" "SER4071TR-ND"
 			(at 58.42 155.448 0)
 			(effects
 				(font
@@ -14647,6 +14613,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 58.42 155.448 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 58.42 155.448 0)
 			(effects
 				(font
@@ -14832,6 +14807,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 114.808 252.476 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "439f4368-6a40-4761-b784-bf59807755de")
 		)
@@ -14974,6 +14958,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 282.702 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 282.702 96.774 0)
 			(effects
 				(font
@@ -15197,6 +15190,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 47.752 66.294 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "177b32e4-2ff4-44e3-9dcd-25b59042d4a4")
 		)
@@ -15404,6 +15406,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 277.622 41.402 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 277.622 41.402 0)
 			(effects
 				(font
@@ -15788,6 +15799,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 114.808 249.936 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e87f53b5-73fd-492f-92c6-d92373a295e6")
 		)
@@ -15939,6 +15959,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 107.95 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a76f7d30-8356-4ee0-ad7f-f9c748a6c3c2")
 		)
@@ -16082,6 +16111,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 116.84 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 116.84 45.212 0)
 			(effects
 				(font
@@ -16304,6 +16342,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 53.848 114.808 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4fe20e0f-d104-4944-b7e4-6d860af951e4")
 		)
@@ -16411,6 +16458,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 75.692 251.206 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 75.692 251.206 0)
 			(effects
 				(font
@@ -16597,6 +16653,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 114.808 247.396 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "6babcd89-07d1-4ab5-93a4-04616f99c985")
 		)
@@ -16648,7 +16713,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "MCP1726-3302E/SN"
+		(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/1A-Low-Voltage-Low-Quiescent-Current-LDO-Regulator-DS20001936E.pdf"
 			(at 184.658 241.808 0)
 			(effects
 				(font
@@ -16658,7 +16723,34 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "IC REG LINEAR 3.3V 1A 8-SOIC"
+			(at 184.658 241.808 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Microchip Technology"
+			(at 184.658 241.808 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "MCP1726-3302E/SN"
+			(at 184.658 241.808 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part Number" "MCP1726-3302E/SN-ND"
 			(at 184.658 241.808 0)
 			(effects
 				(font
@@ -16735,7 +16827,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8589805092313866240"
+		(property "Datasheet" "https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP73833-4-Stand-Alone-Linear-Li-Ion-Li-Polymer-Charge-Management-Controller-DS20002005.pdf"
 			(at 138.684 247.396 0)
 			(effects
 				(font
@@ -16744,7 +16836,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Stand-Alone Linear Li-Ion / Li-Polymer Charge Management Controller, MSOP-10"
+		(property "Description" "IC BATT CNTRL LI-ION 1CEL 10MSOP"
 			(at 138.684 247.396 0)
 			(effects
 				(font
@@ -16753,7 +16845,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Microchip Tech "
+		(property "Manufacturer" "Microchip Technology"
 			(at 138.684 247.396 0)
 			(effects
 				(font
@@ -16771,25 +16863,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" "C627671"
-			(at 138.684 247.396 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "KLC_S3.3" ""
-			(at 138.684 247.396 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "KLC_S4.1" ""
+		(property "Digikey Part Number" "MCP73833T-FCI/UNTR-ND"
 			(at 138.684 247.396 0)
 			(effects
 				(font
@@ -16949,6 +17023,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 211.074 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 211.074 247.65 0)
 			(effects
 				(font
@@ -17165,6 +17248,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 308.864 219.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 308.864 219.456 0)
 			(effects
 				(font
@@ -17587,6 +17679,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 153.416 258.318 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9d2b988f-0ef5-44fd-8ab3-7e149ebc1f3e")
 		)
@@ -17794,6 +17895,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 356.362 44.958 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 356.362 44.958 0)
 			(effects
 				(font
@@ -18022,7 +18132,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" "C5270980"
+		(property "Digikey Part Number" "497-STM32U575RGT6-ND"
 			(at 101.6 133.858 0)
 			(effects
 				(font
@@ -18077,6 +18187,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 101.6 133.858 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 101.6 133.858 0)
 			(effects
 				(font
@@ -18422,6 +18541,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 77.47 164.338 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "19b36b33-f5ea-4216-8e20-857bfa01897a")
 		)
@@ -18705,6 +18833,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 86.36 72.898 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e13e51e8-2387-464b-b822-41540a0f48d0")
 		)
@@ -18848,6 +18985,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 38.1 144.018 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 38.1 144.018 0)
 			(effects
 				(font
@@ -19138,6 +19284,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 172.212 257.556 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c45a2020-ab6f-4dfe-8d25-f7bd27469f7b")
 		)
@@ -19352,6 +19507,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 194.818 248.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1407aa38-bd67-4efd-bf6b-4a7a27b21d42")
 		)
@@ -19401,7 +19565,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
+		(property "Datasheet" "https://gct.co/files/specs/usb4215-spec.pdf"
 			(at 40.386 244.856 0)
 			(effects
 				(font
@@ -19410,7 +19574,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "USB 2.0-only 16P Type-C Receptacle connector"
+		(property "Description" "USB C Receptac, Sht Body, USB2.0"
 			(at 36.576 244.856 0)
 			(effects
 				(font
@@ -19419,7 +19583,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "SHETIME"
+		(property "Manufacturer" "GCT"
 			(at 36.576 244.856 0)
 			(effects
 				(font
@@ -19428,7 +19592,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "TPS10-N1F1-2016-A"
+		(property "Manufacturer Part Number" "USB4215-03-A"
 			(at 36.576 244.856 0)
 			(effects
 				(font
@@ -19437,25 +19601,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" "C52750322"
-			(at 36.576 244.856 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "KLC_S3.3" ""
-			(at 36.576 244.856 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "KLC_S4.1" ""
+		(property "Digikey Part Number" "2073-USB4215-03-ATR-ND"
 			(at 36.576 244.856 0)
 			(effects
 				(font
@@ -19657,6 +19803,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 38.608 114.808 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "12f96b74-5144-4f02-ab6e-465aa5c6d3f6")
 		)
@@ -19762,7 +19917,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" "C16171"
+		(property "Digikey Part Number" "SER4396TR-ND"
 			(at 57.912 116.078 0)
 			(effects
 				(font
@@ -19799,6 +19954,15 @@
 			)
 		)
 		(property "Sim.Type" ""
+			(at 45.72 108.966 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 45.72 108.966 0)
 			(effects
 				(font
@@ -19964,6 +20128,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 139.7 85.598 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2d0f79d3-08bc-4c78-87c7-4920eee3ee56")
 		)
@@ -20025,7 +20198,34 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "GNSS Module MAX M10, VCC 1.65V to 3.6V"
+		(property "Description" "GNSS LCC RX, ROM, TCXO, LNA, SAW"
+			(at 305.308 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "u-blox"
+			(at 305.308 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "MAX-M10S-00B"
+			(at 305.308 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part Number" "672-MAX-M10S-00BTR-ND"
 			(at 305.308 121.92 0)
 			(effects
 				(font
@@ -20299,6 +20499,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 113.03 66.548 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "54eb7dc4-a18e-4720-b28c-852de92b4804")
 		)
@@ -20472,6 +20681,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 68.58 250.952 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 68.58 250.952 0)
 			(effects
 				(font
@@ -20662,7 +20880,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588890085710843904"
+		(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/boardwiretoboard/bwb_minitek127_btb.pdf"
 			(at 167.64 83.82 90)
 			(effects
 				(font
@@ -20698,7 +20916,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" "C239059"
+		(property "Digikey Part Number" "609-3712-ND"
 			(at 176.53 52.07 0)
 			(effects
 				(font
@@ -20753,6 +20971,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 176.53 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 176.53 52.07 0)
 			(effects
 				(font
@@ -21002,6 +21229,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 309.626 46.482 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "ac5ab9b5-4ef5-4bc8-87d1-f4d064ec811e")
 		)
@@ -21218,6 +21454,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 351.028 44.958 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "4374797c-d26e-48ec-8012-b3397cb28305")
 		)
@@ -21426,6 +21671,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 303.022 199.898 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 303.022 199.898 0)
 			(effects
 				(font
@@ -21745,6 +21999,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 87.884 240.792 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "005910a2-e73f-49c5-a1f6-741f2e496ab7")
 		)
@@ -21961,6 +22224,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 290.576 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a3278e34-9788-4158-9889-e1bccddae9f8")
 		)
@@ -22067,6 +22339,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 96.774 240.792 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 96.774 240.792 90)
 			(effects
 				(font
@@ -22226,6 +22507,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 132.08 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9ba9eb5c-ea68-46e6-b280-e90ada75ce69")
 		)
@@ -22376,6 +22666,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 282.956 41.402 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b1615650-f5e3-41c6-b953-2c548b76349f")
 		)
@@ -22438,6 +22737,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 250.952 247.396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 250.952 247.396 0)
 			(effects
 				(font
@@ -22626,6 +22934,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 103.378 240.792 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "afa5f055-2f8d-480c-ae2b-72b7107f0d84")
 		)
@@ -22776,6 +23093,15 @@
 				(hide yes)
 			)
 		)
+		(property "MANUFACTURER_PART_NUMBER" ""
+			(at 122.174 259.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "adc7e053-02ef-4d93-8c1b-2bbf85e4f338")
 		)
@@ -22786,6 +23112,109 @@
 			(project "marine_tracker"
 				(path "/aea3082a-ee68-43bf-ab65-cce2ba7d897e"
 					(reference "C18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "BeunsLibrary:PTS815_SJM_250_SMTR_LFS")
+		(at 19.558 132.588 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f038a3a8-b665-4184-80fe-fe9b6f90c3f9")
+		(property "Reference" "SW2"
+			(at 29.972 133.096 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 30.48 135.636 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "Beuns_PCBFootprint:SW4_PTS815 SJM 250 SMTR LFS_CNK_btnPoussoir"
+			(at 19.558 132.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ckswitches.com/media/2728/pts815.pdf"
+			(at 19.558 132.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SWITCH TACTILE SPST-NO 0.05A 12V"
+			(at 19.558 132.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "C&K"
+			(at 19.558 132.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "PTS815SJM250SMTRLFS"
+			(at 19.558 132.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part Number" "CKN12215-2-ND"
+			(at 19.558 132.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cd9478ec-47e1-4360-a6d8-98b3ce5b89ad")
+		)
+		(pin "4"
+			(uuid "2a8639d4-33bc-4475-a148-01f6b2cb32e6")
+		)
+		(pin "3"
+			(uuid "434aa179-65cb-4079-bf7a-d7afb8289546")
+		)
+		(pin "2"
+			(uuid "dd1e5a77-fc55-4a47-bc12-cde2bbb4cc3d")
+		)
+		(instances
+			(project "marine_tracker"
+				(path "/aea3082a-ee68-43bf-ab65-cce2ba7d897e"
+					(reference "SW2")
 					(unit 1)
 				)
 			)
@@ -23050,6 +23479,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 165.608 257.556 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 165.608 257.556 0)
 			(effects
 				(font
@@ -23330,6 +23768,15 @@
 			)
 		)
 		(property "KLC_S4.1" ""
+			(at 53.34 165.608 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 53.34 165.608 0)
 			(effects
 				(font
