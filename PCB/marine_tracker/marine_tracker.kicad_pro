@@ -514,7 +514,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.37
+        "track_width": 0.33
       },
       {
         "diff_pair_gap": 0.17,
