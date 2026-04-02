@@ -12543,7 +12543,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 169.672 100.838 0)
 			(effects
 				(font
@@ -12552,7 +12552,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 169.672 100.838 0)
 			(effects
 				(font
@@ -12561,52 +12561,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 169.672 100.838 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 169.672 100.838 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 169.672 100.838 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 169.672 100.838 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 169.672 100.838 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 169.672 100.838 0)
 			(effects
 				(font
@@ -12633,7 +12588,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 169.672 100.838 0)
 			(effects
 				(font
@@ -12969,7 +12924,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 121.92 66.548 0)
 			(effects
 				(font
@@ -12978,7 +12933,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 121.92 66.548 0)
 			(effects
 				(font
@@ -12987,52 +12942,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 121.92 66.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 121.92 66.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 121.92 66.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 121.92 66.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 121.92 66.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 121.92 66.548 0)
 			(effects
 				(font
@@ -13059,7 +12969,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 121.92 66.548 0)
 			(effects
 				(font
@@ -13272,7 +13182,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey Part Number" "455-BM04B-GHS-TBTDKR-ND"
+		(property "Digikey Part Number" "455-BM04B-GHS-TBTTR-ND"
 			(at 374.142 50.8 0)
 			(effects
 				(font
@@ -13299,42 +13209,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
-			(at 374.142 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 374.142 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 374.142 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
-			(at 374.142 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "KLC_S3.3" ""
 			(at 374.142 50.8 0)
 			(effects
@@ -13345,15 +13219,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 374.142 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 374.142 50.8 0)
 			(effects
 				(font
@@ -13503,15 +13368,6 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" "61300811121"
-			(at 339.217 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Digikey Part Number" "732-5321-ND"
 			(at 339.217 203.2 0)
 			(effects
@@ -13522,6 +13378,33 @@
 			)
 		)
 		(property "Manufacturer" "Würth Elektronik"
+			(at 339.217 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 339.217 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 339.217 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "61300811121"
 			(at 339.217 203.2 0)
 			(effects
 				(font
@@ -13673,7 +13556,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "10 µF ±10% 16V Ceramic Capacitor X5R 0805 (2012 Metric)"
+			(at 362.966 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 362.966 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 362.966 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part Number" "311-3502-2-ND"
+			(at 362.966 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 362.966 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CC0805KRX5R7BB106"
 			(at 362.966 41.91 0)
 			(effects
 				(font
@@ -13778,42 +13706,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
-			(at 186.182 115.062 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 186.182 115.062 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 186.182 115.062 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
-			(at 186.182 115.062 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "KLC_S3.3" ""
 			(at 186.182 115.062 0)
 			(effects
@@ -13824,15 +13716,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 186.182 115.062 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 186.182 115.062 0)
 			(effects
 				(font
@@ -13982,7 +13865,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 10PF 50V C0G/NPO 0603"
 			(at 63.5 165.608 0)
 			(effects
 				(font
@@ -13991,7 +13874,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 63.5 165.608 0)
 			(effects
 				(font
@@ -14000,52 +13883,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 63.5 165.608 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 63.5 165.608 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 63.5 165.608 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 63.5 165.608 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 63.5 165.608 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603JRNPO9BN100"
 			(at 63.5 165.608 0)
 			(effects
 				(font
@@ -14072,7 +13910,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1058-2-ND"
 			(at 63.5 165.608 0)
 			(effects
 				(font
@@ -14179,6 +14017,24 @@
 				(hide yes)
 			)
 		)
+		(property "KLC_S3.3" ""
+			(at 294.386 51.562 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 294.386 51.562 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "e9f11c92-9a4b-4a3c-ac4a-8a7e381d3a65")
 		)
@@ -14246,7 +14102,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 124.46 45.212 0)
 			(effects
 				(font
@@ -14255,7 +14111,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 124.46 45.212 0)
 			(effects
 				(font
@@ -14264,52 +14120,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 124.46 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 124.46 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 124.46 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 124.46 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 124.46 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 124.46 45.212 0)
 			(effects
 				(font
@@ -14336,7 +14147,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 124.46 45.212 0)
 			(effects
 				(font
@@ -14470,7 +14281,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "10 µF ±10% 16V Ceramic Capacitor X5R 0805 (2012 Metric)"
+			(at 303.911 195.834 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 303.911 195.834 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 303.911 195.834 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part Number" "311-3502-2-ND"
+			(at 303.911 195.834 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 303.911 195.834 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CC0805KRX5R7BB106"
 			(at 303.911 195.834 0)
 			(effects
 				(font
@@ -14605,7 +14461,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "10 µF ±10% 16V Ceramic Capacitor X5R 0805 (2012 Metric)"
+			(at 308.229 215.646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 308.229 215.646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 308.229 215.646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part Number" "311-3502-2-ND"
+			(at 308.229 215.646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 308.229 215.646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CC0805KRX5R7BB106"
 			(at 308.229 215.646 0)
 			(effects
 				(font
@@ -14740,7 +14641,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 369.57 41.91 0)
 			(effects
 				(font
@@ -14749,7 +14650,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 369.57 41.91 0)
 			(effects
 				(font
@@ -14758,52 +14659,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 369.57 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 369.57 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 369.57 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 369.57 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 369.57 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 369.57 41.91 0)
 			(effects
 				(font
@@ -14830,7 +14686,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 369.57 41.91 0)
 			(effects
 				(font
@@ -15002,6 +14858,24 @@
 				(hide yes)
 			)
 		)
+		(property "KLC_S3.3" ""
+			(at 345.186 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 345.186 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "35ecd8a1-320d-4875-a37e-2f36793e0064")
 		)
@@ -15099,42 +14973,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
-			(at 58.42 155.448 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 58.42 155.448 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 58.42 155.448 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
-			(at 58.42 155.448 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "KLC_S3.3" ""
 			(at 58.42 155.448 0)
 			(effects
@@ -15145,15 +14983,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 58.42 155.448 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 58.42 155.448 0)
 			(effects
 				(font
@@ -15285,7 +15114,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "-55℃~+155℃ 470Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+		(property "Description" "RES 470 OHM 1% 1/16W 0402"
 			(at 114.808 252.476 0)
 			(effects
 				(font
@@ -15312,7 +15141,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" "C114877"
+		(property "Digikey Part Number" "311-470LRTR-ND"
 			(at 114.808 252.476 90)
 			(effects
 				(font
@@ -15331,15 +15160,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 114.808 252.476 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 114.808 252.476 90)
 			(effects
 				(font
@@ -15408,7 +15228,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 282.702 96.774 0)
 			(effects
 				(font
@@ -15417,7 +15237,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 282.702 96.774 0)
 			(effects
 				(font
@@ -15426,52 +15246,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 282.702 96.774 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 282.702 96.774 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 282.702 96.774 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 282.702 96.774 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 282.702 96.774 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 282.702 96.774 0)
 			(effects
 				(font
@@ -15498,7 +15273,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 282.702 96.774 0)
 			(effects
 				(font
@@ -15632,7 +15407,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 47.752 66.294 0)
 			(effects
 				(font
@@ -15641,7 +15416,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 47.752 66.294 0)
 			(effects
 				(font
@@ -15650,52 +15425,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 47.752 66.294 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 47.752 66.294 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 47.752 66.294 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 47.752 66.294 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 47.752 66.294 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 47.752 66.294 0)
 			(effects
 				(font
@@ -15722,7 +15452,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 47.752 66.294 0)
 			(effects
 				(font
@@ -15856,7 +15586,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "10kΩ 2 4 62.5mW ±200ppm/℃ ±5% 0402x2 Resistor Networks, Arrays ROHS"
+		(property "Description" "RES 10K OHM 1% 1/16W 0402"
 			(at 277.622 41.402 0)
 			(effects
 				(font
@@ -15874,7 +15604,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "YC122-JR-0710KL"
+		(property "Manufacturer Part Number" "RC0402FR-0710KL"
 			(at 277.622 41.402 0)
 			(effects
 				(font
@@ -15883,43 +15613,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" " C695179"
-			(at 277.622 41.402 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 277.622 41.402 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 277.622 41.402 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 277.622 41.402 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Digikey Part Number" "311-10.0KLRTR-ND"
 			(at 277.622 41.402 0)
 			(effects
 				(font
@@ -15938,15 +15632,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 277.622 41.402 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 277.622 41.402 0)
 			(effects
 				(font
@@ -16147,7 +15832,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "10 µF ±10% 16V Ceramic Capacitor X5R 0805 (2012 Metric)"
+			(at 275.336 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 275.336 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 275.336 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part Number" "311-3502-2-ND"
+			(at 275.336 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 275.336 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CC0805KRX5R7BB106"
 			(at 275.336 96.774 0)
 			(effects
 				(font
@@ -16412,7 +16142,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "-55℃~+155℃ 470Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+		(property "Description" "RES 470 OHM 1% 1/16W 0402"
 			(at 114.808 249.936 0)
 			(effects
 				(font
@@ -16439,7 +16169,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" "C114877"
+		(property "Digikey Part Number" "311-470LRTR-ND"
 			(at 114.808 249.936 90)
 			(effects
 				(font
@@ -16458,15 +16188,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 114.808 249.936 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 114.808 249.936 90)
 			(effects
 				(font
@@ -16536,7 +16257,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "10V 10uF X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+		(property "Description" "10 µF ±10% 16V Ceramic Capacitor X5R 0805 (2012 Metric)"
 			(at 107.95 45.212 0)
 			(effects
 				(font
@@ -16545,7 +16266,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "YAGEO"
 			(at 107.95 45.212 0)
 			(effects
 				(font
@@ -16554,52 +16275,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "GRM21BR61A106KE19L"
-			(at 107.95 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" "C77073"
-			(at 107.95 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 107.95 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 107.95 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 107.95 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0805KRX5R7BB106"
 			(at 107.95 45.212 0)
 			(effects
 				(font
@@ -16626,7 +16302,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-3502-2-ND"
 			(at 107.95 45.212 0)
 			(effects
 				(font
@@ -16762,7 +16438,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 116.84 45.212 0)
 			(effects
 				(font
@@ -16771,7 +16447,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 116.84 45.212 0)
 			(effects
 				(font
@@ -16780,52 +16456,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 116.84 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 116.84 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 116.84 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 116.84 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 116.84 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 116.84 45.212 0)
 			(effects
 				(font
@@ -16852,7 +16483,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 116.84 45.212 0)
 			(effects
 				(font
@@ -16985,7 +16616,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 20PF 100V C0G/NPO 0603"
 			(at 53.848 114.808 0)
 			(effects
 				(font
@@ -16994,7 +16625,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 53.848 114.808 0)
 			(effects
 				(font
@@ -17003,52 +16634,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 53.848 114.808 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 53.848 114.808 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 53.848 114.808 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 53.848 114.808 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 53.848 114.808 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603JRNPO0BN200"
 			(at 53.848 114.808 0)
 			(effects
 				(font
@@ -17075,7 +16661,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1754-2-ND"
 			(at 53.848 114.808 0)
 			(effects
 				(font
@@ -17145,7 +16731,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "-55℃~+155℃ 5.1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+		(property "Description" "RES 5.1K OHM 1% 1/16W 0402"
 			(at 75.692 251.206 0)
 			(effects
 				(font
@@ -17172,7 +16758,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" "C105872"
+		(property "Digikey Part Number" "311-5.10KLRTR-ND"
 			(at 75.692 251.206 0)
 			(effects
 				(font
@@ -17191,15 +16777,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 75.692 251.206 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 75.692 251.206 0)
 			(effects
 				(font
@@ -17332,7 +16909,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "-55℃~+155℃ 470Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+		(property "Description" "RES 470 OHM 1% 1/16W 0402"
 			(at 114.808 247.396 0)
 			(effects
 				(font
@@ -17359,7 +16936,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" "C114877"
+		(property "Digikey Part Number" "311-470LRTR-ND"
 			(at 114.808 247.396 90)
 			(effects
 				(font
@@ -17378,15 +16955,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 114.808 247.396 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 114.808 247.396 90)
 			(effects
 				(font
@@ -17484,6 +17052,24 @@
 			)
 		)
 		(property "Digikey Part Number" "MCP1726-3302E/MF-ND"
+			(at 184.658 241.808 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 184.658 241.808 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
 			(at 184.658 241.808 0)
 			(effects
 				(font
@@ -17601,6 +17187,24 @@
 		)
 		(property "Digikey Part Number" "MCP73833T-FCI/MFTR-ND"
 			(at 136.398 230.886 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 138.684 247.396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 138.684 247.396 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17761,7 +17365,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "CAP CER 4.7UF 16V X5R 0603"
 			(at 211.074 247.65 0)
 			(effects
 				(font
@@ -17770,7 +17374,43 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "KLC_S3.3" ""
+			(at 211.074 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 211.074 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part Number" "311-1785-2-ND"
+			(at 211.074 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 211.074 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CC0603KRX5R7BB475"
 			(at 211.074 247.65 0)
 			(effects
 				(font
@@ -17905,7 +17545,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 318.389 215.646 0)
 			(effects
 				(font
@@ -17914,7 +17554,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 318.389 215.646 0)
 			(effects
 				(font
@@ -17923,52 +17563,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 318.389 215.646 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 318.389 215.646 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 318.389 215.646 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 318.389 215.646 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 318.389 215.646 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 318.389 215.646 0)
 			(effects
 				(font
@@ -17995,7 +17590,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 318.389 215.646 0)
 			(effects
 				(font
@@ -18328,7 +17923,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1uF 25V X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+		(property "Description" "CAP CER 1UF 16V X7R 0603"
 			(at 153.416 258.318 0)
 			(effects
 				(font
@@ -18337,7 +17932,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "YAGEO"
 			(at 153.416 258.318 0)
 			(effects
 				(font
@@ -18346,52 +17941,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " GRM188R61E105KA12D"
-			(at 153.416 258.318 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" "C77046"
-			(at 153.416 258.318 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 153.416 258.318 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 153.416 258.318 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 153.416 258.318 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB105"
 			(at 153.416 258.318 0)
 			(effects
 				(font
@@ -18418,7 +17968,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1446-2-ND"
 			(at 153.416 258.318 0)
 			(effects
 				(font
@@ -18552,7 +18102,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "10kΩ 2 4 62.5mW ±200ppm/℃ ±5% 0402x2 Resistor Networks, Arrays ROHS"
+		(property "Description" "RES 10K OHM 1% 1/16W 0402"
 			(at 356.362 44.958 0)
 			(effects
 				(font
@@ -18570,7 +18120,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "YC122-JR-0710KL"
+		(property "Manufacturer Part Number" "RC0402FR-0710KL"
 			(at 356.362 44.958 0)
 			(effects
 				(font
@@ -18579,43 +18129,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" " C695179"
-			(at 356.362 44.958 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 356.362 44.958 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 356.362 44.958 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 356.362 44.958 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Digikey Part Number" "311-10.0KLRTR-ND"
 			(at 356.362 44.958 0)
 			(effects
 				(font
@@ -18634,15 +18148,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 356.362 44.958 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 356.362 44.958 0)
 			(effects
 				(font
@@ -18880,42 +18385,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
-			(at 101.6 133.858 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 101.6 133.858 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 101.6 133.858 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
-			(at 101.6 133.858 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "KLC_S3.3" ""
 			(at 101.6 133.858 0)
 			(effects
@@ -18926,15 +18395,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 101.6 133.858 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 101.6 133.858 0)
 			(effects
 				(font
@@ -19190,7 +18650,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "25V 4.7uF X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+		(property "Description" "4.7 µF -20%, +80% 16V Ceramic Capacitor Y5V (F) 0805 (2012 Metric)"
 			(at 77.47 164.338 0)
 			(effects
 				(font
@@ -19199,7 +18659,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "YAGEO"
 			(at 77.47 164.338 0)
 			(effects
 				(font
@@ -19208,52 +18668,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "GRM21BR61E475KA12L"
-			(at 77.47 164.338 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" "C77077"
-			(at 77.47 164.338 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 77.47 164.338 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 77.47 164.338 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 77.47 164.338 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0805ZKY5V7BB475"
 			(at 77.47 164.338 0)
 			(effects
 				(font
@@ -19280,7 +18695,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1907-2-ND"
 			(at 77.47 164.338 0)
 			(effects
 				(font
@@ -19482,7 +18897,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1uF 25V X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+		(property "Description" "CAP CER 1UF 16V X7R 0603"
 			(at 86.36 72.898 0)
 			(effects
 				(font
@@ -19491,7 +18906,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "YAGEO"
 			(at 86.36 72.898 0)
 			(effects
 				(font
@@ -19500,52 +18915,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" " GRM188R61E105KA12D"
-			(at 86.36 72.898 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" "C77046"
-			(at 86.36 72.898 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 86.36 72.898 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 86.36 72.898 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 86.36 72.898 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB105"
 			(at 86.36 72.898 0)
 			(effects
 				(font
@@ -19572,7 +18942,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1446-2-ND"
 			(at 86.36 72.898 0)
 			(effects
 				(font
@@ -19642,7 +19012,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "10kΩ 2 4 62.5mW ±200ppm/℃ ±5% 0402x2 Resistor Networks, Arrays ROHS"
+		(property "Description" "RES 10K OHM 1% 1/16W 0402"
 			(at 38.1 144.018 0)
 			(effects
 				(font
@@ -19660,7 +19030,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "YC122-JR-0710KL"
+		(property "Manufacturer Part Number" "RC0402FR-0710KL"
 			(at 38.1 144.018 0)
 			(effects
 				(font
@@ -19669,43 +19039,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" " C695179"
-			(at 38.1 144.018 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 38.1 144.018 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 38.1 144.018 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 38.1 144.018 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Digikey Part Number" "311-10.0KLRTR-ND"
 			(at 38.1 144.018 0)
 			(effects
 				(font
@@ -19724,15 +19058,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 38.1 144.018 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 38.1 144.018 0)
 			(effects
 				(font
@@ -19933,7 +19258,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "10kΩ 2 4 62.5mW ±200ppm/℃ ±5% 0402x2 Resistor Networks, Arrays ROHS"
+		(property "Description" "RES 10K OHM 1% 1/16W 0402"
 			(at 172.212 257.556 0)
 			(effects
 				(font
@@ -19951,7 +19276,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "YC122-JR-0710KL"
+		(property "Manufacturer Part Number" "RC0402FR-0710KL"
 			(at 172.212 257.556 0)
 			(effects
 				(font
@@ -19960,43 +19285,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" " C695179"
-			(at 172.212 257.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 172.212 257.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 172.212 257.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 172.212 257.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Digikey Part Number" "311-10.0KLRTR-ND"
 			(at 172.212 257.556 0)
 			(effects
 				(font
@@ -20015,15 +19304,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 172.212 257.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 172.212 257.556 0)
 			(effects
 				(font
@@ -20147,7 +19427,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8588887094307119105"
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/691137710002.pdf"
 			(at 194.818 248.92 0)
 			(effects
 				(font
@@ -20156,7 +19436,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "-40℃~+105℃ 1 1.5 14~26 15A 1x2P 2 250V 2P 5mm Green Through Hole Plugin,P=5mm Screw Terminal Blocks ROHS"
+		(property "Description" "TERM BLK 2POS SIDE ENTRY 5MM PCB"
 			(at 194.818 248.92 0)
 			(effects
 				(font
@@ -20165,7 +19445,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Ningbo Kangnex Elec"
+		(property "Manufacturer" "Würth Elektronik"
 			(at 194.818 248.92 0)
 			(effects
 				(font
@@ -20174,7 +19454,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "WJ127-5.0-02P-14-00A"
+		(property "Manufacturer Part Number" "691137710002"
 			(at 194.818 248.92 0)
 			(effects
 				(font
@@ -20183,43 +19463,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" " C3703"
-			(at 194.818 248.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 194.818 248.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 194.818 248.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 194.818 248.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Digikey Part Number" "732-10955-ND"
 			(at 194.818 248.92 0)
 			(effects
 				(font
@@ -20238,15 +19482,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 194.818 248.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 194.818 248.92 0)
 			(effects
 				(font
@@ -20341,6 +19576,24 @@
 			)
 		)
 		(property "Digikey Part Number" "2073-USB4215-03-ATR-ND"
+			(at 36.576 244.856 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 36.576 244.856 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
 			(at 36.576 244.856 0)
 			(effects
 				(font
@@ -20452,7 +19705,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 20PF 100V C0G/NPO 0603"
 			(at 38.608 114.808 0)
 			(effects
 				(font
@@ -20461,7 +19714,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 38.608 114.808 0)
 			(effects
 				(font
@@ -20470,52 +19723,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 38.608 114.808 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 38.608 114.808 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 38.608 114.808 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 38.608 114.808 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 38.608 114.808 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603JRNPO0BN200"
 			(at 38.608 114.808 0)
 			(effects
 				(font
@@ -20542,7 +19750,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1754-2-ND"
 			(at 38.608 114.808 0)
 			(effects
 				(font
@@ -20665,51 +19873,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
-			(at 45.72 108.966 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 45.72 108.966 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 45.72 108.966 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
-			(at 45.72 108.966 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
-			(at 45.72 108.966 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "3"
 			(uuid "aa7b7f6c-8ddc-444d-bb95-8e24ecd9c525")
 		)
@@ -20777,7 +19940,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 139.7 85.598 0)
 			(effects
 				(font
@@ -20786,7 +19949,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 139.7 85.598 0)
 			(effects
 				(font
@@ -20795,52 +19958,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 139.7 85.598 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 139.7 85.598 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 139.7 85.598 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 139.7 85.598 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 139.7 85.598 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 139.7 85.598 0)
 			(effects
 				(font
@@ -20867,7 +19985,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 139.7 85.598 0)
 			(effects
 				(font
@@ -20965,6 +20083,24 @@
 			)
 		)
 		(property "Digikey Part Number" "672-MAX-M10S-00BTR-ND"
+			(at 305.308 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 305.308 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
 			(at 305.308 121.92 0)
 			(effects
 				(font
@@ -21148,7 +20284,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 1UF 16V X7R 0603"
 			(at 113.03 66.548 0)
 			(effects
 				(font
@@ -21157,7 +20293,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 113.03 66.548 0)
 			(effects
 				(font
@@ -21166,52 +20302,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 113.03 66.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 113.03 66.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 113.03 66.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 113.03 66.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 113.03 66.548 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB105"
 			(at 113.03 66.548 0)
 			(effects
 				(font
@@ -21238,7 +20329,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1446-2-ND"
 			(at 113.03 66.548 0)
 			(effects
 				(font
@@ -21374,7 +20465,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "-55℃~+155℃ 5.1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+		(property "Description" "RES 5.1K OHM 1% 1/16W 0402"
 			(at 68.58 250.952 0)
 			(effects
 				(font
@@ -21401,7 +20492,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" "C105872"
+		(property "Digikey Part Number" "311-5.10KLRTR-ND"
 			(at 68.58 250.952 0)
 			(effects
 				(font
@@ -21420,15 +20511,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 68.58 250.952 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 68.58 250.952 0)
 			(effects
 				(font
@@ -21664,42 +20746,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" ""
-			(at 176.53 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 176.53 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 176.53 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
-			(at 176.53 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "KLC_S3.3" ""
 			(at 176.53 52.07 0)
 			(effects
@@ -21710,15 +20756,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 176.53 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 176.53 52.07 0)
 			(effects
 				(font
@@ -21878,7 +20915,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 309.626 46.482 0)
 			(effects
 				(font
@@ -21887,7 +20924,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 309.626 46.482 0)
 			(effects
 				(font
@@ -21896,52 +20933,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 309.626 46.482 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 309.626 46.482 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 309.626 46.482 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 309.626 46.482 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 309.626 46.482 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 309.626 46.482 0)
 			(effects
 				(font
@@ -21968,7 +20960,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 309.626 46.482 0)
 			(effects
 				(font
@@ -22103,7 +21095,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "10kΩ 2 4 62.5mW ±200ppm/℃ ±5% 0402x2 Resistor Networks, Arrays ROHS"
+		(property "Description" "RES 10K OHM 1% 1/16W 0402"
 			(at 351.028 44.958 0)
 			(effects
 				(font
@@ -22121,7 +21113,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "YC122-JR-0710KL"
+		(property "Manufacturer Part Number" "RC0402FR-0710KL"
 			(at 351.028 44.958 0)
 			(effects
 				(font
@@ -22130,43 +21122,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" " C695179"
-			(at 351.028 44.958 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 351.028 44.958 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 351.028 44.958 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 351.028 44.958 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Digikey Part Number" "311-10.0KLRTR-ND"
 			(at 351.028 44.958 0)
 			(effects
 				(font
@@ -22185,15 +21141,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 351.028 44.958 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 351.028 44.958 0)
 			(effects
 				(font
@@ -22328,7 +21275,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 312.547 196.088 0)
 			(effects
 				(font
@@ -22337,7 +21284,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 312.547 196.088 0)
 			(effects
 				(font
@@ -22346,52 +21293,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 312.547 196.088 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 312.547 196.088 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 312.547 196.088 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 312.547 196.088 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 312.547 196.088 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 312.547 196.088 0)
 			(effects
 				(font
@@ -22418,7 +21320,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 312.547 196.088 0)
 			(effects
 				(font
@@ -22684,7 +21586,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "LED RED DIFFUSED 1608 SMD"
 			(at 87.884 240.792 0)
 			(effects
 				(font
@@ -22693,7 +21595,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Hubei KENTO Elec"
+		(property "Manufacturer" "Rohm Semiconductor"
 			(at 87.884 240.792 90)
 			(effects
 				(font
@@ -22702,16 +21604,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "KT-0603R"
-			(at 87.884 240.792 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" "C2286"
+		(property "Manufacturer Part Number" "SML-D12U1WT86"
 			(at 87.884 240.792 90)
 			(effects
 				(font
@@ -22738,7 +21631,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "SML-D12U1WT86TR-ND"
 			(at 87.884 240.792 90)
 			(effects
 				(font
@@ -22873,7 +21766,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 1000PF 50V C0G/NPO 0603"
 			(at 290.576 96.774 0)
 			(effects
 				(font
@@ -22882,7 +21775,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 290.576 96.774 0)
 			(effects
 				(font
@@ -22891,52 +21784,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 290.576 96.774 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 290.576 96.774 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 290.576 96.774 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 290.576 96.774 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 290.576 96.774 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603JPNPO9BN102"
 			(at 290.576 96.774 0)
 			(effects
 				(font
@@ -22963,7 +21811,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "13-CC0603JPNPO9BN102TR-ND"
 			(at 290.576 96.774 0)
 			(effects
 				(font
@@ -23032,7 +21880,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "LED RED DIFFUSED 1608 SMD"
 			(at 96.774 240.792 0)
 			(effects
 				(font
@@ -23041,7 +21889,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Hubei KENTO Elec"
+		(property "Manufacturer" "Rohm Semiconductor"
 			(at 96.774 240.792 90)
 			(effects
 				(font
@@ -23050,16 +21898,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "KT-0603R"
-			(at 96.774 240.792 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" "C2286"
+		(property "Manufacturer Part Number" "SML-D12U1WT86"
 			(at 96.774 240.792 90)
 			(effects
 				(font
@@ -23086,7 +21925,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "SML-D12U1WT86TR-ND"
 			(at 96.774 240.792 90)
 			(effects
 				(font
@@ -23156,7 +21995,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 0.1UF 16V X7R 0603"
 			(at 132.08 45.212 0)
 			(effects
 				(font
@@ -23165,7 +22004,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 132.08 45.212 0)
 			(effects
 				(font
@@ -23174,52 +22013,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 132.08 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 132.08 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 132.08 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 132.08 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 132.08 45.212 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB104"
 			(at 132.08 45.212 0)
 			(effects
 				(font
@@ -23246,7 +22040,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1088-2-ND"
 			(at 132.08 45.212 0)
 			(effects
 				(font
@@ -23315,7 +22109,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "10kΩ 2 4 62.5mW ±200ppm/℃ ±5% 0402x2 Resistor Networks, Arrays ROHS"
+		(property "Description" "RES 10K OHM 1% 1/16W 0402"
 			(at 282.956 41.402 0)
 			(effects
 				(font
@@ -23333,7 +22127,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "YC122-JR-0710KL"
+		(property "Manufacturer Part Number" "RC0402FR-0710KL"
 			(at 282.956 41.402 0)
 			(effects
 				(font
@@ -23342,43 +22136,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" " C695179"
-			(at 282.956 41.402 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 282.956 41.402 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 282.956 41.402 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 282.956 41.402 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Digikey Part Number" "311-10.0KLRTR-ND"
 			(at 282.956 41.402 0)
 			(effects
 				(font
@@ -23397,15 +22155,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 282.956 41.402 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 282.956 41.402 0)
 			(effects
 				(font
@@ -23475,7 +22224,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "CAP CER 1UF 16V X7R 0603"
 			(at 257.048 247.396 0)
 			(effects
 				(font
@@ -23484,7 +22233,43 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "KLC_S3.3" ""
+			(at 257.048 247.396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 257.048 247.396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part Number" "311-1446-2-ND"
+			(at 257.048 247.396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 257.048 247.396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CC0603KRX7R7BB105"
 			(at 257.048 247.396 0)
 			(effects
 				(font
@@ -23619,7 +22404,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Light emitting diode"
+		(property "Description" "LED RED DIFFUSED 1608 SMD"
 			(at 103.378 240.792 0)
 			(effects
 				(font
@@ -23628,7 +22413,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Hubei KENTO Elec"
+		(property "Manufacturer" "Rohm Semiconductor"
 			(at 103.378 240.792 90)
 			(effects
 				(font
@@ -23637,16 +22422,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "KT-0603R"
-			(at 103.378 240.792 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" "C2286"
+		(property "Manufacturer Part Number" "SML-D12U1WT86"
 			(at 103.378 240.792 90)
 			(effects
 				(font
@@ -23673,7 +22449,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "SML-D12U1WT86TR-ND"
 			(at 103.378 240.792 90)
 			(effects
 				(font
@@ -23742,7 +22518,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "10V 10uF X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+		(property "Description" "10 µF ±10% 16V Ceramic Capacitor X5R 0805 (2012 Metric)"
 			(at 122.174 259.588 0)
 			(effects
 				(font
@@ -23751,7 +22527,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Murata Electronics"
+		(property "Manufacturer" "YAGEO"
 			(at 122.174 259.588 0)
 			(effects
 				(font
@@ -23760,52 +22536,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" "GRM21BR61A106KE19L"
-			(at 122.174 259.588 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" "C77073"
-			(at 122.174 259.588 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 122.174 259.588 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 122.174 259.588 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 122.174 259.588 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0805KRX5R7BB106"
 			(at 122.174 259.588 0)
 			(effects
 				(font
@@ -23832,7 +22563,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-3502-2-ND"
 			(at 122.174 259.588 0)
 			(effects
 				(font
@@ -23930,6 +22661,24 @@
 			)
 		)
 		(property "Digikey Part Number" "CKN12215-2-ND"
+			(at 19.558 132.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 19.558 132.588 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
 			(at 19.558 132.588 0)
 			(effects
 				(font
@@ -24136,7 +22885,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "-55℃~+155℃ 2kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS"
+		(property "Description" "RES 2K OHM 1% 1/16W 0402"
 			(at 165.608 257.556 0)
 			(effects
 				(font
@@ -24163,43 +22912,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB Part Number" ""
-			(at 165.608 257.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 165.608 257.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 165.608 257.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 165.608 257.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Digikey Part Number" "311-2KLRTR-ND"
 			(at 165.608 257.556 0)
 			(effects
 				(font
@@ -24218,15 +22931,6 @@
 			)
 		)
 		(property "KLC_S4.1" ""
-			(at 165.608 257.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" ""
 			(at 165.608 257.556 0)
 			(effects
 				(font
@@ -24427,7 +23131,52 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
+		(property "Description" "CAP CER 1000PF 50V C0G/NPO 0603"
+			(at 249.682 253.746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S3.3" ""
+			(at 249.682 253.746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "KLC_S4.1" ""
+			(at 249.682 253.746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part Number" "13-CC0603JPNPO9BN102TR-ND"
+			(at 249.682 253.746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 249.682 253.746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer Part Number" "CC0603JPNPO9BN102"
 			(at 249.682 253.746 0)
 			(effects
 				(font
@@ -24494,7 +23243,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "CAP CER 10PF 50V C0G/NPO 0603"
 			(at 53.34 165.608 0)
 			(effects
 				(font
@@ -24503,7 +23252,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" ""
+		(property "Manufacturer" "YAGEO"
 			(at 53.34 165.608 0)
 			(effects
 				(font
@@ -24512,52 +23261,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer Part Number" ""
-			(at 53.34 165.608 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB Part Number" ""
-			(at 53.34 165.608 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 53.34 165.608 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 53.34 165.608 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 53.34 165.608 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
+		(property "Manufacturer Part Number" "CC0603JRNPO9BN100"
 			(at 53.34 165.608 0)
 			(effects
 				(font
@@ -24584,7 +23288,7 @@
 				(hide yes)
 			)
 		)
-		(property "MANUFACTURER_PART_NUMBER" ""
+		(property "Digikey Part Number" "311-1058-2-ND"
 			(at 53.34 165.608 0)
 			(effects
 				(font
