@@ -1,0 +1,155 @@
+\documentclass[12pt]{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+% include graphics i.e images
+\usepackage{graphicx}
+\usepackage{fancyhdr} % headers
+\usepackage[utf8]{inputenc}
+\usepackage{gensymb}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{csvsimple}
+\usepackage{titlesec}
+\usepackage{lastpage}
+\usepackage{pdfpages}
+\usepackage{comment}
+\usepackage{xcolor}
+
+\usepackage{verbatim}
+
+\usepackage{lipsum}  
+
+\setcounter{tocdepth}{1} % Exclude subsubsections from the table of contents
+
+
+% include hyperlinks in the doc
+\usepackage{hyperref}
+%setup hyperref
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\today}
+\lhead{Marine Animal Tracking System}
+\lfoot{PI - Wearable Sensing Device}
+\rfoot{Page \thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+
+%------------------------------------------------------------------------------------------------
+\title{PI}
+\author{Benoit Schick}
+
+\begin{document}
+
+\begin{titlepage}
+   \begin{center}
+        \Huge
+        Marine Animal Tracking System\\
+        \Large 
+        PI - Wearable Sensing Device 
+            
+        \vspace{1.5cm}
+        \Large    
+        Benoit Schick\\
+        Warpelin Daryl\\
+       	Jeyapalan Jeyapiragash\\
+	Zweifel Robin
+        
+        \vspace{0.5cm}
+        
+        Supervisor:\\
+        \vspace{0.1cm}
+        Marco Mazza\\
+
+        \vfill
+
+        2024–2025 Academic Year, Spring Semester \\
+        \vspace{1cm}
+            
+        \normalsize
+        Multidisciplinary project\\
+        \vspace{0.25cm}
+        
+	Master of science in Engineering 
+        \vspace{0.25cm}
+        
+        \vspace{0.8cm}
+            
+        \includegraphics[width=0.75\textwidth]{pictures/mse_logo.png}
+        \vspace{1cm} 
+        
+   \end{center}
+\end{titlepage}
+
+\pagestyle{fancy}
+
+\section{Introduction}
+
+\section{Hardware (Benoit Schick)}
+\subsection{Défis et contraintes du système embarqué}
+
+Le système développé dans ce projet doit fonctionner dans un environnement particulièrement contraignant, ce qui impose certains choix au niveau de l'architecture. 
+\subsubsection{Isolement géographique}
+L’une des contraintes fondamentales est la localisation des animaux suivis. Les espèces ciblées évoluent en haute mer, à des centaines voire des milliers de kilomètres de toute infrastructure terrestre. Dans ces zones, aucune technologie de communication classique n’est disponible : les réseaux cellulaires tels que le GSM, la 4G ou la 5G ne sont exploitables qu’à proximité des côtes, et les réseaux IoT longue portée comme LoRaWAN sont insuffisants pour cette application. \\
+Dans ce contexte, la seule solution viable pour assurer une communication globale est la transmission par satellite. Deux technologies principales sont généralement utilisées dans ce type d’application :
+\begin{itemize}
+	\item \textbf{Le réseau Iridium} : Système qui repose sur une constellation de 66 satellites en orbite basse (LEO, ~780 km), offre une latence faible et une couverture totale.
+	\item \textbf{Le réseau Argos} : Système satellite pour la localisation et la collecte de données désigné spécifiquement pour l'étude et la protection de l'environnement. Il est par exemple utilisé pour le suivi d'animaux marins et est largement adopté dans la communauté scientifique pour ce type d'application.  
+\end{itemize}
+Ces solutions permettent une communication globale mais introduisent immédiatement des contraintes importantes en termes d’énergie et de disponibilité du signal.
+
+
+\subsubsection{Contraintes du milieu marin}
+Le milieu marin impose une contrainte majeure : l'eau de mer est un milieu extrêmement atténuant pour les ondes électromagnétiques utilisées pour la communication satellite. A quelques centimètres de profondeur seulement, tout signal est totalement absorbé et il est donc impossible de transmettre ou de recevoir quoi que ce soit lorsque l'animal est immergé, quelle que soit la puissance d'émission utillisée.\\
+Cette contrainte impose un fonctionnement discontinu du système, alternant entre des phases d’immersion, où seules les mesures sont réalisées, et des phases de surface, où la communication est possible.
+
+\subsubsection{Stockage temporaire}
+L'impossibilité de transmission en continu des données exige d'intégrer une mémoire non volatile externe pour stocker temporairement l'ensemble des données acquises pendant les phases d'immersion (température, pression \footnote{Bien que fondamentale, la mesure de la pression a été abandonnée du à des contraintes budgétaires. Elle sera quand même évoquée dans ce rapport}, la position et horodatage des mesures). \\
+Cette mémoire permet donc de gérer l’imprévisibilité des phases de surface, qui dépendent du comportement de l’animal et des conditions environnementales.
+
+\subsubsection{Consommation}
+Les conditions dans lequel le système va évoluer, introduit des contraintes importantes en termes de consommation énergétique. Les modules de communication, en particulier le GPS et le système satellite, figurent parmi les éléments les plus énergivores du système. \\
+En effet, le module GPS nécessite une phase d’acquisition du signal satellite, qui peut devenir longue et coûteuse en énergie si les conditions de réception sont mauvaises ou si les fenêtres de surface sont très courtes. De même, le module de communication satellite présente des pics de consommation élevés lors de chaque tentative de transmission. \\
+Ces contraintes sont aggravées par l’incertitude sur la durée et la fréquence des phases de surface, ce qui peut entraîner des activations répétées des modules de localisation et de communication, augmentant encore la consommation globale du système. \\
+
+Or l’autonomie du système constitue un paramètre critique, car elle détermine la durée d’exploitation du dispositif ainsi que la capacité à le récupérer grâce au module GPS, chargé de transmettre la position du boîtier. Une stratégie de gestion énergétique est donc nécessaire afin de limiter le temps d'activation des modules GPS+satellite et maximiser le temps passé en mode low-power. Le système devra donc reposer sur une logique événementielle, dans laquelle les modules GPS et satellite ne sont activés que lorsque les conditions sont favorables, c’est-à-dire lors des phases de surface.
+
+\subsection{Spécifications}
+Pour des raisons de couts et de simplicités, le systeme devra être fait pour suivre les tortues
+
+
+\subsection{Architecture générale}
+
+La partie électronique doit assurer de manière autonome la localisation de l'animal, l'acquisition de données environnementales, le stockage temporaire des mesures et leur transmission vers une infrastructure terrestre via un lien satellite. L'ensemble de ces fonctions doit être réalisé dans des conditions extrêmes (pression, salinité notamment) tout en maintenant une certaine autonomie.\\
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\linewidth]{pictures/schema_bloc.png}	
+	\caption{Schéma bloc}
+\end{figure}
+
+L'architecture retenue s'articule autour de cinq blocs principaux : un microcontrôleur central à très faible consommation, un module GPS pour la localisation, un ensemble de capteurs (température et pression), un module de communication satellite, et une source d'énergie dimensionnée pour la durée de l'expérience. Un convertisseur DC-DC assure la régulation de tension depuis la batterie vers les différents périphériques. Une mémoire flash externe permet le stockage tampon des données entre deux transmissions.
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
