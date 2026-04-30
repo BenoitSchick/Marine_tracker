@@ -180,7 +180,8 @@ Enfin, une mémoire non volatile EEPROM de 512kB assure le stockage tampon des d
 
 \subsection{Liste du matériel}
 
-La table \ref{tab:bom} présente la liste complète des composants intégrés sur le PCB. Le choix des composants 
+La Table \ref{tab:bom} présente la liste complète des composants intégrés sur le PCB. Le choix de ces derniers a été principalement guidé par des critères de faible consommation, de compacité et de disponibilité via le distributeur Digikey. \\
+Pour des raisons de gains de temps, la fabrication ainsi que l’assemblage du PCB ont été confiés à PCBWay.
 
 \begin{table}[h!]
 \centering
@@ -240,7 +241,8 @@ La table \ref{tab:bom} présente la liste complète des composants intégrés su
 \label{tab:bom}
 \end{table}
 
-
+Le tableau \ref{tab:component_suppl} regroupe les composants externes au PCB : les antennes, la batterie LiPo, le module satellite Arribada et le capteur de pression BlueRobotics. \\
+Le module satellite a été externalisé pour des raisons d'encombrement car son intégration directe sur le PCB aurait conduit à des dimensions incompatibles avec les contraintes mécaniques du boîtier. Le capteur de pression, quant à lui, nécessite d'être monté sur la paroi du boîtier afin d'exposer sa membrane au milieu extérieur.
 
 
 \begin{table}[h!]
@@ -259,11 +261,11 @@ La table \ref{tab:bom} présente la liste complète des composants intégrés su
 \textbf{URL} \\ 
 \hline \hline
 
-1 & 30bars Pressure sensors & 1 & BlueRobotics & \url{https://bluerobotics.com/store/sensors-cameras/sensors/bar-depth-pressure-sensor}\\ \hline
-2 & Lipo Battery 1S 10Ah & 1 & Uxney & \url{https://www.amazon.fr/dp/B0CSS4FFHC?th=1}\\ \hline
-3 & Argos Omnidirectional Antenna (401Mhz) & 1 & Sparkfun & \url{https://www.sparkfun.com/argos-omnidirectional-antenna-401mhz.html}\\ \hline
-4 & GNSS patch Antenna 1.6GHz & 1 & Quectel & \url{https://www.digikey.ch/en/products/detail/quectel/YFGA225E3BM/26239589}\\ \hline
-5 & Arribada SMD Wing & 1 & Arribada & \url{https://arribada.org/product/arribada-smd-wing/}\\ \hline
+29 & 30bars Pressure sensors & 1 & BlueRobotics & \url{https://bluerobotics.com/store/sensors-cameras/sensors/bar-depth-pressure-sensor}\\ \hline
+30 & Lipo Battery 1S 10Ah & 1 & Uxney & \url{https://www.amazon.fr/dp/B0CSS4FFHC?th=1}\\ \hline
+31 & Argos Omnidirectional Antenna (401Mhz) & 1 & Sparkfun & \url{https://www.sparkfun.com/argos-omnidirectional-antenna-401mhz.html}\\ \hline
+32 & GNSS patch Antenna 1.6GHz & 1 & Quectel & \url{https://www.digikey.ch/en/products/detail/quectel/YFGA225E3BM/26239589}\\ \hline
+33 & Arribada SMD Wing & 1 & Arribada & \url{https://arribada.org/product/arribada-smd-wing/}\\ \hline
 \end{tabularx}
 
 \caption{Listes des composants externes au PCB}
@@ -271,7 +273,6 @@ La table \ref{tab:bom} présente la liste complète des composants intégrés su
 \end{table}
 
 
-\subsection{Budget}
 \subsection{Calcul d'autonomie}
 
 L’estimation de l’autonomie du système repose sur l’évaluation de la consommation des différents modules en fonction de leur cycle d’utilisation. Le fonctionnement étant fortement dépendant du comportement de l’animal, une approche basée sur des scénarios typiques d’utilisation est adoptée.
