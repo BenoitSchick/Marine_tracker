@@ -94,8 +94,6 @@
 
 \pagestyle{fancy}
 
-\section{Introduction}
-
 \section{Hardware (Benoit Schick)}
 \subsection{Défis et contraintes du système embarqué}
 
@@ -107,7 +105,7 @@ Dans ce contexte, la seule solution viable pour assurer une communication global
 	\item \textbf{Le réseau Iridium} : Système qui repose sur une constellation de 66 satellites en orbite basse (LEO, ~780 km), offre une latence faible et une couverture totale.
 	\item \textbf{Le réseau Argos} : Système satellite pour la localisation et la collecte de données désigné spécifiquement pour l'étude et la protection de l'environnement. Il est par exemple utilisé pour le suivi d'animaux marins et est largement adopté dans la communauté scientifique pour ce type d'application.  
 \end{itemize}
-Ces solutions permettent une communication globale mais introduisent immédiatement des contraintes importantes en termes d’énergie et de disponibilité du signal.
+Ces solutions permettent une communication globale mais introduisent des contraintes importantes en termes d’énergie et de disponibilité du signal.
 
 
 \subsubsection{Contraintes du milieu marin}
@@ -125,22 +123,244 @@ Ces contraintes sont aggravées par l’incertitude sur la durée et la fréquen
 
 Or l’autonomie du système constitue un paramètre critique, car elle détermine la durée d’exploitation du dispositif ainsi que la capacité à le récupérer grâce au module GPS, chargé de transmettre la position du boîtier. Une stratégie de gestion énergétique est donc nécessaire afin de limiter le temps d'activation des modules GPS+satellite et maximiser le temps passé en mode low-power. Le système devra donc reposer sur une logique événementielle, dans laquelle les modules GPS et satellite ne sont activés que lorsque les conditions sont favorables, c’est-à-dire lors des phases de surface.
 
+
 \subsection{Spécifications}
-Pour des raisons de couts et de simplicités, le systeme devra être fait pour suivre les tortues
+
+Le comportement de l’animal joue un rôle déterminant dans le dimensionnement du système. En effet, lorsqu’il est immergé, toute communication satellite est impossible. Le dispositif doit donc exploiter les phases de surface, durant lesquelles l’animal doit rester suffisamment longtemps pour permettre l’acquisition d’une position GPS ainsi que la transmission des données via le module satellite. La profondeur de plongée constitue également un paramètre critique, car elle impose des contraintes mécaniques importantes, notamment en raison de la pression exercée sur le boîtier. \\
+Après comparaison avec d’autres espèces (cf. tableau), le choix s’est porté sur la tortue marine. Ce choix repose principalement sur ses phases de surface relativement longues et régulières, qui facilitent l’établissement d’une connexion satellite fiable et limitent les activations inutiles des modules de communication et de localisation. Cela permet ainsi de réduire la consommation énergétique du système tout en simplifiant certaines contraintes mécaniques.\\
+
+L’autonomie représente un autre enjeu majeur. Le système doit être capable de fonctionner sur une longue durée afin de collecter un volume de données suffisant, tout en permettant idéalement la récupération du dispositif en fin de mission afin de limiter son impact environnemental. Cela implique une gestion optimisée de l’énergie, notamment en réduisant l’utilisation des modules les plus énergivores.\\
+
+% Enfin, l’environnement d’utilisation impose des contraintes fortes en termes de communication. En raison de l’éloignement des infrastructures terrestres, les solutions classiques (GSM, LoRa, etc.) ne sont pas exploitables. L’utilisation d’une liaison satellite est donc indispensable pour assurer la transmission des données sur de longues distances.
+
+\noindent Voici un résumé des spécifications prises en compte pour la partie Hardware du projet :
+
+\begin{itemize}
+    \item \textbf{Communication} : Transmission des données via un réseau satellite.
+    \item \textbf{Localisation} : Acquisition de la position GPS du dispositif afin de permettre sa localisation et sa récupération
+    \item \textbf{Stockage} : Utilisation d'une mémoire non volatile permettant l’enregistrement des données durant les phases d’immersion.
+    \item \textbf{Autonomie} : Fonctionnement sur batterie avec un objectif d’autonomie d’environ un mois, reposant sur une optimisation de la consommation (modes low power, activation événementielle des modules).
+    \item \textbf{Capteurs} : Mesure de la température de l'eau et de la profondeur (via un capteur de pression) en fonction de la position, afin de constituer une base de données exploitable pour permettre de suivre l'évolution thermiques des océans dans le cadre du réchauffement climatique.  
+\end{itemize}
 
 
-\subsection{Architecture générale}
+\subsection{Architecture générale} 
+La partie électronique doit assurer de manière autonome la localisation de l’animal, l’acquisition de données environnementales, le stockage temporaire des mesures ainsi que leur transmission vers une infrastructure terrestre via un lien satellite. L’ensemble de ces fonctions doit être garanti dans des conditions environnementales extrêmes (pression, salinité, immersion), tout en maintenant une autonomie énergétique suffisante.
 
-La partie électronique doit assurer de manière autonome la localisation de l'animal, l'acquisition de données environnementales, le stockage temporaire des mesures et leur transmission vers une infrastructure terrestre via un lien satellite. L'ensemble de ces fonctions doit être réalisé dans des conditions extrêmes (pression, salinité notamment) tout en maintenant une certaine autonomie.\\
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\linewidth]{pictures/schema_bloc.png}	
-	\caption{Schéma bloc}
+	\caption{Schéma bloc de la partie Hardware}
+	\label{fig:schema_bloc}
 \end{figure}
 
-L'architecture retenue s'articule autour de cinq blocs principaux : un microcontrôleur central à très faible consommation, un module GPS pour la localisation, un ensemble de capteurs (température et pression), un module de communication satellite, et une source d'énergie dimensionnée pour la durée de l'expérience. Un convertisseur DC-DC assure la régulation de tension depuis la batterie vers les différents périphériques. Une mémoire flash externe permet le stockage tampon des données entre deux transmissions.
+L’architecture du système s’articule autour d’un microcontrôleur STM32U5 basé sur un coeur ARM Cortex-M33. Ce composant a été retenu pour sa très faible consommation (jusqu’à 160 nA en mode low power), sa compatibilité avec Zephyr RTOS facilitant le développement logiciel, ainsi que la présence de multiples modes low-power (7 modes) permettant d’adapter le compromis entre consommation, disponibilité des périphériques et sources de wakeup. Il intègre également un large éventail d’interfaces de communication (I2C, SPI, UART, USB), assurant l’interconnexion avec les différents modules du système. \\
+
+L’alimentation repose sur une batterie Lithium-Polymère (LiPo) 1S d’une capacité de 10 Ah. Ce choix s’explique par sa forte densité énergétique, permettant de optimiser l’énergie stockée tout en réduisant la masse et le volume (Fig. \ref{fig:densite_bat}), ce qui constitue un critère essentiel pour une application embarquée sur animal. Néanmoins, ce type de batterie impose des contraintes strictes en termes de sécurité et d'utilisation. \\
+La gestion de la charge est assurée par le circuit MCP73833, qui intègre les protections nécessaires contre la surcharge et la décharge excessive. Dans cette phase de prototypage, la recharge s’effectue via une interface USB-C. À terme, une solution de récupération d’énergie est envisagée, basée sur un générateur entraîné par une hélice mise en rotation par les déplacements de l’animal.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.5\linewidth]{pictures/densite_energie_batteries.jpg}	
+	\caption{Densité d'énergie selon le type de batterie}
+	\label{fig:densite_bat}
+\end{figure}
+
+La localisation est assurée par le module GPS MAX-M10S, sélectionné pour son faible niveau de consommation (environ 25mW en mode tracking continu), particulièrement adapté aux systèmes sur batterie. La communication avec le microcontrôleur s’effectue via une interface UART.\\
+L’acquisition des données environnementales repose sur deux capteurs connectés au microcontrôleur via le bus I2C :
+\begin{itemize}
+	\item Capteur de pression MS5803-30BA : permet d’estimer la profondeur à partir de la pression mesurée. Sa capacité à supporter jusqu’à 30bar (environ 300m de profondeur) le rend adapté au suivi de tortues marines.
+	\item Capteur de température et humidité SHT40 : mesure la température interne du boîtier ainsi que l’humidité, paramètre critique pour détecter toute infiltration. Ce capteur présente également une très faible consommation ($0.4\mu W$), compatible avec les contraintes énergétiques du système.
+\end{itemize}
+
+La transmission des données est assurée par un module de communication satellite Arribada Argos SMD, interfacé en UART avec le microcontrôleur. Ce module a été retenu pour son caractère open-source, facilitant l’intégration logicielle, ainsi que pour son coût plus accessible que les solutions Iridium. Il permet d’exploiter le réseau Argos, composé d’une constellation de satellites offrant une couverture mondiale adaptée à cette application. \\
+
+Enfin, une mémoire non volatile EEPROM de 512kB assure le stockage tampon des données entre deux phases de transmission, garantissant la conservation des mesures en cas d’indisponibilité temporaire du lien satellite.
 
 
+\subsection{Liste du matériel}
+
+La table \ref{tab:bom} présente la liste complète des composants intégrés sur le PCB. Le choix des composants 
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.05}
+
+\begin{tabularx}{\textwidth}{|c|c|c|c|c|X|}
+\hline
+
+\textbf{\rule{0pt}{3.2ex}\#} & 
+\textbf{Reference} & 
+\textbf{Qty} & 
+\textbf{Mfr} & 
+\textbf{Digikey Part Number} & 
+\textbf{Description/Value} \\
+\hline \hline
+
+1 & Y3 & 1 & Epson & SER4396TR-ND & 16 MHz crystal \\ \hline
+2 & Y1 & 1 & Epson & SER4071TR-ND & 32.768 kHz crystal (RTC) \\ \hline
+
+3 & U7 & 1 & u-blox & 672-MAX-M10S-00BTR-ND & GNSS module \\ \hline
+4 & U6 & 1 & Microchip & 150-25CSM04T-I/SNTR-ND & 4 Mbit SPI EEPROM \\ \hline
+5 & U5 & 1 & Microchip & MCP1726-3302E/MF-ND & 3.3V LDO regulator \\ \hline
+6 & U3 & 1 & Microchip & MCP73833T-FCI/MFTR-ND & LiPo charger \\ \hline
+7 & U2 & 1 & Sensirion & 1649-SHT40-AD1B-R3TR-ND & Temp \& humidity sensor \\ \hline
+8 & U1 & 1 & ST & 497-STM32U575RGT6-ND & Cortex-M33 MCU \\ \hline
+
+9 & SW2 & 1 & C\&K & CKN12215-2-ND & Push button \\ \hline
+
+10 & R12 & 1 & YAGEO & 311-2KLRTR-ND & 2k$\Omega$ \\ \hline
+11 & R8--R10 & 3 & YAGEO & 311-470LRTR-ND & 470$\Omega$ \\ \hline
+12 & R4,R7 & 2 & YAGEO & 311-5.10KLRTR-ND & 5.1k$\Omega$ \\ \hline
+13 & R1--R6,R11 & 6 & YAGEO & 311-10.0KLRTR-ND & 10k$\Omega$ \\ \hline
+
+14 & J6 & 1 & Samtec & 612-RSP-122811-01TR-ND & U.FL RF connector \\ \hline
+15 & J5 & 1 & Würth & 732-5321-ND & 8-pin header \\ \hline
+16 & J4 & 1 & JST & 455-BM04B-GHS-TBTTR-ND & 4-pin connector \\ \hline
+17 & J3 & 1 & GCT & 2073-USB4215-03-ATR-ND & USB-C \\ \hline
+18 & J2 & 1 & Amphenol & 609-3712-ND & SWD/JTAG \\ \hline
+19 & J1 & 1 & Würth & 732-10955-ND & Terminal block \\ \hline
+
+20 & D1--D3 & 3 & Rohm & SML-D12U1WT86TR-ND & Red LEDs \\ \hline
+
+21 & C26 & 1 & YAGEO & 311-1785-2-ND & 4.7$\mu$F \\ \hline
+22 & C22,C23 & 2 & YAGEO & 13-CC0603JPNPO9BN102TR-ND & 1nF \\ \hline
+23 & C13,C14 & 2 & YAGEO & 311-1754-2-ND & 20pF \\ \hline
+24 & C11,C12 & 2 & YAGEO & 311-1058-2-ND & 10pF \\ \hline
+25 & C6,C7,C19,C28 & 4 & YAGEO & 311-1446-2-ND & 1$\mu$F \\ \hline
+26 & C3--C10,C15--C17,C20,C21,C25 & 12 & YAGEO & 311-1088-2-ND & 100nF \\ \hline
+27 & C2,C18,C24,C27,C29,C30 & 6 & YAGEO & 311-3502-2-ND & 10$\mu$F \\ \hline
+28 & C1 & 1 & YAGEO & 311-1907-2-ND & 4.7$\mu$F \\ \hline
+
+\end{tabularx}
+
+\caption{Bill of Materials (BOM) – PCB}
+\label{tab:bom}
+\end{table}
+
+
+
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.05}
+
+\begin{tabularx}{\textwidth}{|c|c|c|c|X|}
+\hline
+
+\textbf{\rule{0pt}{3.2ex}\#} & 
+\textbf{Name} & 
+\textbf{Qty} & 
+\textbf{Mfr} & 
+\textbf{URL} \\ 
+\hline \hline
+
+1 & 30bars Pressure sensors & 1 & BlueRobotics & \url{https://bluerobotics.com/store/sensors-cameras/sensors/bar-depth-pressure-sensor}\\ \hline
+2 & Lipo Battery 1S 10Ah & 1 & Uxney & \url{https://www.amazon.fr/dp/B0CSS4FFHC?th=1}\\ \hline
+3 & Argos Omnidirectional Antenna (401Mhz) & 1 & Sparkfun & \url{https://www.sparkfun.com/argos-omnidirectional-antenna-401mhz.html}\\ \hline
+4 & GNSS patch Antenna 1.6GHz & 1 & Quectel & \url{https://www.digikey.ch/en/products/detail/quectel/YFGA225E3BM/26239589}\\ \hline
+5 & Arribada SMD Wing & 1 & Arribada & \url{https://arribada.org/product/arribada-smd-wing/}\\ \hline
+\end{tabularx}
+
+\caption{Listes des composants externes au PCB}
+\label{tab:component_suppl}
+\end{table}
+
+
+\subsection{Budget}
+\subsection{Calcul d'autonomie}
+
+L’estimation de l’autonomie du système repose sur l’évaluation de la consommation des différents modules en fonction de leur cycle d’utilisation. Le fonctionnement étant fortement dépendant du comportement de l’animal, une approche basée sur des scénarios typiques d’utilisation est adoptée.
+
+Le système alterne entre deux états principaux :
+\begin{itemize}
+    \item \textbf{Phase d’immersion} : le microcontrôleur fonctionne en mode basse consommation et seuls les capteurs sont activés périodiquement pour effectuer les mesures.
+    \item \textbf{Phase de surface} : activation du module GPS pour l’acquisition de la position, suivie de l’activation du module satellite pour la transmission des données.
+\end{itemize}
+
+\subsubsection{Hypothèses de fonctionnement}
+
+Afin d’estimer la consommation moyenne, les hypothèses suivantes sont retenues :
+
+\begin{itemize}
+    \item 1 cycle toutes les 10 minutes (remontée en surface)
+    \item Durée d’acquisition GPS : 30 s
+    \item Durée de transmission satellite : 10 s
+    \item Mesure capteurs toutes les 10 s en immersion
+\end{itemize}
+
+\subsubsection{Consommation des modules}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Module} & \textbf{Consommation} & \textbf{Mode} \\
+\hline
+Microcontrôleur & 5 $\mu$A & veille \\
+GPS MAX-M10S & 25 mW & acquisition \\
+Module Argos & 500 mW & transmission \\
+Capteurs & 1 mW & mesure \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Calcul de la consommation moyenne}
+
+Sur un cycle de 10 minutes (600 s) :
+
+\begin{itemize}
+    \item GPS : $25\,mW \times 30\,s = 750\,mJ$
+    \item Satellite : $500\,mW \times 10\,s = 5000\,mJ$
+    \item Capteurs : $1\,mW \times 600\,s = 600\,mJ$
+    \item Microcontrôleur (veille) : négligeable devant les autres contributions
+\end{itemize}
+
+Énergie totale par cycle :
+\[
+E_{cycle} = 750 + 5000 + 600 = 6350\,mJ
+\]
+
+Puissance moyenne :
+\[
+P_{moy} = \frac{6350\,mJ}{600\,s} \approx 10.6\,mW
+\]
+
+\subsubsection{Estimation de l’autonomie}
+
+Avec une batterie LiPo de 10 Ah à 3.7 V :
+
+\[
+E_{batt} = 10 \times 3.7 = 37\,Wh
+\]
+
+Autonomie estimée :
+\[
+T = \frac{37\,Wh}{0.0106\,W} \approx 3490\,h \approx 145\,jours
+\]
+
+\subsubsection{Discussion}
+
+Cette estimation montre que l’autonomie théorique du système dépasse largement l’objectif fixé d’un mois. Toutefois, ce calcul repose sur des hypothèses optimistes. En pratique, plusieurs facteurs peuvent réduire significativement cette autonomie :
+
+\begin{itemize}
+    \item temps d’acquisition GPS plus long (conditions de réception dégradées)
+    \item retransmissions en cas d’échec de communication
+    \item consommation réelle supérieure des modules
+    \item pertes liées à la conversion d’énergie
+\end{itemize}
+
+Une marge de sécurité importante doit donc être considérée. Malgré cela, ces résultats confirment la faisabilité du système vis-à-vis de la contrainte d’autonomie.
+
+
+\subsection{Choix antenne GPS}
+\subsection{PCB quelques points importants}
+	\subsubsection{Thermique}
+	\subsubsection{Adaptation d'impédance}
+	\subsubsection{Test points}
 \end{document}
 
 
