@@ -23,7 +23,7 @@
 \usepackage{pdfpages}
 \usepackage{comment}
 \usepackage{xcolor}
-
+\usepackage{multirow}
 \usepackage{verbatim}
 
 \usepackage{lipsum}  
@@ -296,18 +296,53 @@ Afin d’estimer la consommation moyenne, les hypothèses suivantes sont retenue
 
 \subsubsection{Consommation des modules}
 
-\begin{center}
-\begin{tabular}{|c|c|c|}
+\begin{table}[h]
+\centering
+\caption{Consommations des différents modules selon les phases de fonctionnement du système}
+\begin{tabular}{|c|l|l|c|}
 \hline
-\textbf{Module} & \textbf{Consommation} & \textbf{Mode} \\
+\textbf{Phase} & \textbf{Module} & \textbf{Mode} & \textbf{Courant} \\
+\hline\hline
+
+\multirow{3}{*}{Immersion}
+& STM32U5 & Low Power & 50$\mu A$ \\
+& SHT40 & Measurement & 2.2$\mu A$ \\
+& MS5837-30BA & Measurement & 5$\mu A$ \\
+& GPS MAX-M10S & OFF & 0mA \\
+& Module Argos & STOP & 2$\mu A$ \\
 \hline
-Microcontrôleur & 5 $\mu$A & veille \\
-GPS MAX-M10S & 25 mW & acquisition \\
-Module Argos & 500 mW & transmission \\
-Capteurs & 1 mW & mesure \\
+
+\multirow{3}{*}{Surface}
+& STM32U5 & Run Mode & 2mA \\
+& SHT40 & Idle & 0.08$\mu A$ \\
+& MS5837-30BA & Measurement & 5$\mu A$ \\
+& GPS MAX-M10S & Tracking/Acquisition & 10mA \\
+& Module Argos & Transmission & 250mA \\
 \hline
+
 \end{tabular}
-\end{center}
+\label{tab:conso_phases}
+\end{table}
+% \begin{center}
+% \begin{tabular}{|c|l|c|c|c|}
+% \hline
+% \textbf{Phase} & \textbf{Module} & \textbf{Mode} & \textbf{Courant} & \textbf{Durée} \\
+% \hline\hline
+
+% \multirow{3}{*}{Immersion}
+% & STM32U5 & Stop mode & xx µA & continu \\
+% & SHT40 & Mesure périodique & xx µA / mesure & x s toutes x min \\
+% & MS5837-30BA & Mesure périodique & xx µA / mesure & x s toutes x min \\
+% \hline
+
+% \multirow{3}{*}{Surface}
+% & STM32U5 & Run mode & xx mA & x min \\
+% & GPS MAX-M10S & Acquisition GPS & xx mA & x s \\
+% & Module Argos & Transmission & xx mA & x s \\
+% \hline
+
+% \end{tabular}
+% \end{center}
 
 \subsubsection{Calcul de la consommation moyenne}
 
@@ -357,9 +392,138 @@ Cette estimation montre que l’autonomie théorique du système dépasse largem
 Une marge de sécurité importante doit donc être considérée. Malgré cela, ces résultats confirment la faisabilité du système vis-à-vis de la contrainte d’autonomie.
 
 
-\subsection{Choix antenne GPS}
+
+\subsection{Module GNSS}
+
+Le module GNSS retenu est le MAX-M10M de u-blox, sélectionné pour sa faible
+consommation et sa sensibilité de \textbf{--148 dBm} en cold start, soit le seuil
+minimal de signal détectable par le récepteur dans les pires conditions de réception.
+
+\subsubsection{Types de démarrage}
+
+Les récepteurs GNSS distinguent trois modes de démarrage selon les informations
+disponibles à la mise sous tension :
+
+\begin{itemize}
+    \item \textbf{Cold start} : le récepteur ne dispose d'aucune information préalable
+    (position, heure, éphémérides). Il doit explorer l'intégralité de l'espace
+    temps-fréquence et décoder les éphémérides de chaque satellite acquis (18 à 36
+    secondes en conditions normales), conduisant à un TTFF\footnote{Time To First Fix}
+    d'environ 30 secondes.
+
+    \item \textbf{Warm start} : le récepteur dispose de l'heure approximative, de la
+    dernière position connue et de l'almanach. Il doit néanmoins télécharger de
+    nouvelles éphémérides, car celles-ci sont typiquement invalides après 4 heures.
+    Le TTFF est significativement réduit.
+
+    \item \textbf{Hot start} : le récepteur a été mis hors tension moins de 4 heures,
+    ses éphémérides sont encore valides. C'est le mode de démarrage le plus rapide,
+    ne nécessitant aucun téléchargement supplémentaire.
+\end{itemize}
+
+Ces informations de redémarrage (heure, éphémérides, almanach) sont conservées dans
+la \textbf{Battery-Backed RAM (BBR)} du module. Si l'alimentation de cette mémoire
+est interrompue, elles sont perdues et le module repart systématiquement en cold start.
+
+\subsubsection{Impact de l'immersion sur le démarrage GNSS}
+
+Le signal GPS étant totalement absorbé par l'eau de mer dès quelques centimètres de
+profondeur, le module GNSS est inactif durant toute la phase d'immersion. À chaque
+remontée en surface, il doit effectuer une nouvelle acquisition complète. La durée
+typique d'un cold start (~30 s) est donc le scénario systématique dans cette
+application.
+
+\subsubsection{Gestion de l'alimentation du module GNSS}
+
+Dans le but de limiter la consommation énergétique durant les phases d'immersion, le
+module peut être placé en veille profonde via le \textbf{Software Standby Mode},
+activé par le message UBX-RXM-PMREQ. Dans ce mode, l'alimentation interne VCC est
+désactivée par le module lui-même, tandis que V\_IO reste fourni par le système. Cela
+permet de maintenir la BBR, le RTC et les PIOs actifs, préservant ainsi les données
+nécessaires à un redémarrage en warm start.
+
+Il est important de noter que la RAM est effacée à l'entrée en Software Standby. La
+configuration du module doit donc être stockée sur la \textbf{couche BBR} et non en
+RAM. Par ailleurs, le réveil doit impérativement s'effectuer via la pin
+\textbf{EXTINT} : un réveil par RESET\_N entraîne en effet l'effacement du contenu
+de la BBR, forçant un cold start.
+
+La pin \textbf{V\_BCKP} n'a pas été intégrée dans la conception matérielle actuelle.
+Cette broche optionnelle permet d'alimenter la BBR et le RTC indépendamment de V\_IO,
+via une batterie externe, permettant ainsi le maintien des données de navigation même
+lors d'une coupure complète de l'alimentation principale. En son absence, la BBR est
+alimentée exclusivement via V\_IO : tant que cette alimentation reste active, les
+données de navigation sont préservées et un warm start reste possible. En revanche, si
+V\_IO est interrompu, la BBR est effacée et le module repart en cold start.
+
+En pratique, le module est placé en \textbf{Software Standby Mode} durant les phases
+d'immersion, V\_IO restant alimenté en permanence. La BBR est ainsi maintenue, ce qui
+permet un \textbf{redémarrage en warm start} à chaque remontée en surface, avec un
+TTFF réduit par rapport à un cold start. La sensibilité en cold start de --148 dBm
+reste néanmoins le dimensionnement retenu pour le pire cas, par exemple lors du
+premier démarrage du système ou après une coupure d'alimentation imprévue.
+
+V_IO current in software stanby mode @V_IO = 3.3V = 46uA
+
+Time to first fix
+The time to first fix (TTFF) is perhaps one of the better known measures of GPS/GNSS module performance. Counted in seconds, the TTFF calculates the time taken, after power on, to obtain a fix, accurate position and time using four satellites. 
+
+
+-130dBm
+
+
+
+% Pour économoniser de l'énergie pendant qu'on est sous l'eau, il existe du modes pour le GNSS :
+% \begin{itemize}
+% 	\item Hardware backup mode : The hardware backup mode allows entering a backup state and resuming operation by switching the main power supplies on and off while maintaining a V_BCKP supply via, e.g. a battery.
+% 	\item Software standby mode : Le Software Standby Mode (UBX-RXM-PMREQ) sur le MAX-M10M est un mode de veille profonde contrôlé par logiciel.  VCC supply is internally disabled to save power. The V_IO supply maintains the battery-backed RAM (BBR), RTC, and PIO. Entering the software standby mode clears the RAM memory including the receiver configuration. To maintain the configuration, store it on BBR ce qui va permettre de redémarrer en warm start si le wakeup se fait via EXTINT pin (wakup via RESET_N ou UART_RX efface la BBR et on fait un cold start).
+% \end{itemize}
+% e warm start nécessite que le BBR (Battery-Backed RAM) conserve les données entre deux sessions : heure, éphémérides, almanach. Sans V_BCKP, le BBR est alimenté via V_IO. Si tu coupes V_IO (ce que le low power implique souvent), le BBR est effacé → cold start forcé.
+
+% Le module GPS choisi est le module MAX-M10S de ublox qui a une sensitivity de -148 dBm (cold start), the minimum signal strength that the gps receiver can detect. The weakest signal that a receiver wil be able to indentify and process. Vue que le module sera souvent immergé, le signal GPS sera coupé et le GPS sera toujours en cold start, donc le pire cas c'est-à-dire -148dBm. Le cold start d'un GNSS signifie que le module GOS démarre sans informations utilise déjà memorisé et doit repartir de zéro pour obtenir une position. C'est-à-dire qu'il n'a plus sa dernière position connue, plus les orbites précises des satellite, plus l'heure précise... Au démarrage, il mettra environ 30s pour connaitre la position (au lieu de 1 à 5s)
+
+% V\_BCKP n'a pas été implémenté et la conséquence est que le GNSS va tjr démarré en cold start. En effet, si l'alimentation principale du GNSS (VCC\_IO) est interrompue, le RTC time et GNSS orbit data in the BBR sont effacées. Or valid time and GNSS orbit data at startup improves positioning
+% performance by enabling hot starts, warm starts (p.73 MAX-M10S Integration Manual)
+
+
+% GNSS receivers typically make a distinction between cold, warm, and hot start based on the type of
+% valid information the receiver has during the restart.
+% • Cold start: in the cold start mode, the receiver has no information from the last position (e.g.
+% time, velocity, frequency etc.) at startup. Therefore, the receiver must search the full time and
+% frequency space, and all possible satellite numbers. If a satellite signal is found, it is tracked
+% to decode the ephemeris (18-36 seconds under strong signal conditions), while the other
+% channels continue to search satellites. Once there is a sufficient number of satellites with
+% valid ephemeris, the receiver can calculate position and velocity data. Other GNSS receiver
+% manufacturers call this the Factory startup mode.
+% • Warm start: in the warm start mode, the receiver has approximate information for time,
+% position, and coarse satellite position data (Almanac). In this mode, the receiver normally needs
+% to download ephemeris after power-up before it can calculate position and velocity data. As the
+% ephemeris data is usually outdated after 4 hours, the receiver typically starts with a warm start
+% if it has been powered down for more than 4 hours. In this scenario, several augmentations are
+% possible. See Multiple GNSS assistance.
+% • Hot start: in the hot start mode, the receiver has been powered down only for a short time (4
+% hours or less), so that its ephemeris is still valid. Since the receiver does not need to download
+% ephemeris again, this is the fastest startup method.
+
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pictures/ant-s11.png}
+        \caption{Paramètre S11 de l'antenne}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pictures/ant-smith.png}
+        \caption{Smith Cart de l'antenne}
+    \end{minipage}
+\end{figure}
+
+
 \subsection{PCB quelques points importants}
-	\subsubsection{Thermique}
+\subsubsection{Power Supply \& Dissipation Thermique}
 	\subsubsection{Adaptation d'impédance}
 	\subsubsection{Test points}
 \end{document}
