@@ -392,12 +392,13 @@ Cette estimation montre que l’autonomie théorique du système dépasse largem
 Une marge de sécurité importante doit donc être considérée. Malgré cela, ces résultats confirment la faisabilité du système vis-à-vis de la contrainte d’autonomie.
 
 
+Le maintien de \textbf{V\_IO} permet de conserver la BBR, l'horloge temps réel (RTC) ainsi que les entrées/sorties nécessaires au réveil. Les données utiles au redémarrage sont ainsi préservées tout en réduisant fortement la consommation. Le courant mesuré dans ce mode est de l'ordre de \textbf{46~\textmu A} sous \textbf{3.3 V}.
 
 \subsection{Module GNSS}
 
-Le module GNSS retenu est le MAX-M10M de u-blox, sélectionné pour sa faible
-consommation et sa sensibilité de \textbf{--148 dBm} en cold start, soit le seuil
-minimal de signal détectable par le récepteur dans les pires conditions de réception.
+% Cette section a pour objectif d'expliquer les différents modes de fonctionnement du module GNSS dans l'objectif d'optimiser sa consommation. En effet, il s'agit d'un des modules le plus énergivores et mérite donc un intérêt particulier à optimiser sa consommation. \\
+% Le choix d'antenne est également critique car le signal GPS est extrêmement faible et son signal est très sensible. 
+Cette section présente les différents modes de fonctionnement du module GNSS ainsi que la stratégie retenue pour en réduire la consommation énergétique. En effet, ce sous-système figure parmi les plus énergivores de l'architecture et nécessite donc une attention particulière. Le choix de l'antenne est également déterminant, les signaux GNSS reçus étant de très faible puissance et particulièrement sensibles aux perturbations.
 
 \subsubsection{Types de démarrage}
 
@@ -405,106 +406,64 @@ Les récepteurs GNSS distinguent trois modes de démarrage selon les information
 disponibles à la mise sous tension :
 
 \begin{itemize}
-    \item \textbf{Cold start} : le récepteur ne dispose d'aucune information préalable
-    (position, heure, éphémérides). Il doit explorer l'intégralité de l'espace
-    temps-fréquence et décoder les éphémérides de chaque satellite acquis (18 à 36
-    secondes en conditions normales), conduisant à un TTFF\footnote{Time To First Fix}
-    d'environ 30 secondes.
+    \item \textbf{Cold start} : le récepteur ne dispose d'aucune information préalable (heure, dernière position, et  éphémérides\footnote{Données orbitales précises transmises par les satellites et décrivant leur trajectoire instantanée.}). Il doit alors rechercher les satellites visibles, synchroniser leurs signaux et télécharger les données nécessaires au calcul de position. Cette procédure conduit à un \textit{TTFF}\footnote{\textit{Time To First Fix}, temps nécessaire après la mise sous tension pour obtenir une position et une heure valides à partir d'au moins quatre satellites.} typiquement de l'ordre de 30 secondes.
 
-    \item \textbf{Warm start} : le récepteur dispose de l'heure approximative, de la
-    dernière position connue et de l'almanach. Il doit néanmoins télécharger de
-    nouvelles éphémérides, car celles-ci sont typiquement invalides après 4 heures.
-    Le TTFF est significativement réduit.
+    \item \textbf{Warm start} : le récepteur conserve une estimation de l'heure, de la dernière position connue ainsi que des informations globales sur la constellation. Les éphémérides précédemment mémorisées étant généralement plus valides après quelques heures, elles doivent être téléchargées à nouveau. Le \textit{TTFF} est alors réduit à quelques secondes.
 
-    \item \textbf{Hot start} : le récepteur a été mis hors tension moins de 4 heures,
-    ses éphémérides sont encore valides. C'est le mode de démarrage le plus rapide,
-    ne nécessitant aucun téléchargement supplémentaire.
+    \item \textbf{Hot start} : le récepteur dispose encore de données de navigation récentes et valides, notamment des éphémérides. Le redémarrage est quasi immédiat et ne nécessite pas de téléchargement complémentaire. Pour le module MAX-M10M, le \textit{TTFF} typique est de l'ordre de 1 seconde.
 \end{itemize}
 
-Ces informations de redémarrage (heure, éphémérides, almanach) sont conservées dans
-la \textbf{Battery-Backed RAM (BBR)} du module. Si l'alimentation de cette mémoire
-est interrompue, elles sont perdues et le module repart systématiquement en cold start.
-
-\subsubsection{Impact de l'immersion sur le démarrage GNSS}
-
-Le signal GPS étant totalement absorbé par l'eau de mer dès quelques centimètres de
-profondeur, le module GNSS est inactif durant toute la phase d'immersion. À chaque
-remontée en surface, il doit effectuer une nouvelle acquisition complète. La durée
-typique d'un cold start (~30 s) est donc le scénario systématique dans cette
-application.
+Les informations utilisées pour accélérer le redémarrage sont conservées dans la \textbf{Battery-Backed RAM (BBR)} du module. En cas de perte d'alimentation de cette mémoire, ces données sont effacées et le module redémarre en \textit{cold start}.
 
 \subsubsection{Gestion de l'alimentation du module GNSS}
 
-Dans le but de limiter la consommation énergétique durant les phases d'immersion, le
-module peut être placé en veille profonde via le \textbf{Software Standby Mode},
-activé par le message UBX-RXM-PMREQ. Dans ce mode, l'alimentation interne VCC est
-désactivée par le module lui-même, tandis que V\_IO reste fourni par le système. Cela
-permet de maintenir la BBR, le RTC et les PIOs actifs, préservant ainsi les données
-nécessaires à un redémarrage en warm start.
+Les signaux GNSS étant fortement atténués par l'eau de mer dès quelques centimètres de profondeur, aucune réception exploitable n'est possible durant l'immersion. Afin de limiter la consommation pendant cette phase, le module est placé en mode deep sleep via le \textbf{Software Standby Mode}. Dans ce mode, l'alimentation interne est désactivée et le module suspend toute acquisition satellite. \\
+Il est par contre impératif de maintenir l'alimentation du module GNSS (pin $V\_IO$) qui permet de conserver la mémoire BBR et l'horloge temp réel (RTC). Le GPS évitera ainsi un \textit{cold start} au redémarrage ce qui permet un \textit{TTFF} beaucoup plus rapide, un consommation réduite et également une sensibilité du récepteur bien meilleure (gain de 20dBm environ).\\
 
-Il est important de noter que la RAM est effacée à l'entrée en Software Standby. La
-configuration du module doit donc être stockée sur la \textbf{couche BBR} et non en
-RAM. Par ailleurs, le réveil doit impérativement s'effectuer via la pin
-\textbf{EXTINT} : un réveil par RESET\_N entraîne en effet l'effacement du contenu
-de la BBR, forçant un cold start.
+En pratique, le module reste en \textbf{Software Standby Mode} durant l'immersion avec $V\_IO$ maintenue en permanence ce qui représente une consommation d'environ $45\mu A$. Cette architecture permet un redémarrage en \textit{warm start} à chaque remontée en surface. 
 
-La pin \textbf{V\_BCKP} n'a pas été intégrée dans la conception matérielle actuelle.
-Cette broche optionnelle permet d'alimenter la BBR et le RTC indépendamment de V\_IO,
-via une batterie externe, permettant ainsi le maintien des données de navigation même
-lors d'une coupure complète de l'alimentation principale. En son absence, la BBR est
-alimentée exclusivement via V\_IO : tant que cette alimentation reste active, les
-données de navigation sont préservées et un warm start reste possible. En revanche, si
-V\_IO est interrompu, la BBR est effacée et le module repart en cold start.
+\subsubsection{Antenne du GNSS}
+L'antenne constitue un paramètre critique du récepteur GNSS : même le meilleur récepteur ne peut compenser les pertes engendrées par une antenne de mauvaise qualité ou une conception RF défaillante du PCB. Au-delà du choix et de la conception de l'antenne, son positionnement ainsi que l'environnement dans lequel elle opère peuvent impacter significativement ses performances. \\
+Ainsi, pour garantir des performances optimales, le choix de l'antenne doit être guidé par les critères suivants :
+\begin{enumerate}
+\item \textbf{Faible directivité} : l’antenne doit présenter un diagramme de rayonnement suffisamment large afin de capter le plus grand nombre possible de satellites.
+\item \textbf{Gain orienté vers le ciel :} Le gain de l'antenne doit être concentré vers la demi-sphère supérieure afin d'améliorer la sensibilité du récepteur. 
+\item \textbf{Visibilité ciel dégagée :} L'antenne doit être positionnée de manière à disposer d'une vue dégagée vers le ciel, à l'écart de tout élément susceptible de perturber le champ électromagnétique, tel que des pièces métalliques ou des structures conductrices.
+\item \textbf{Adaptation d’impédance} : l’impédance entre l’antenne, la ligne de transmission et l’entrée RF du récepteur GNSS doit être correctement adaptée (généralement à 50$\Omega$) afin de minimiser les réflexions et maximiser le transfert de puissance.
+\end{enumerate}
 
-En pratique, le module est placé en \textbf{Software Standby Mode} durant les phases
-d'immersion, V\_IO restant alimenté en permanence. La BBR est ainsi maintenue, ce qui
-permet un \textbf{redémarrage en warm start} à chaque remontée en surface, avec un
-TTFF réduit par rapport à un cold start. La sensibilité en cold start de --148 dBm
-reste néanmoins le dimensionnement retenu pour le pire cas, par exemple lors du
-premier démarrage du système ou après une coupure d'alimentation imprévue.
+Dans une optique de réduction de la consommation énergétique, le choix s’est porté sur une \textbf{antenne patch passive}. Ce choix se justifie principalement par l’absence de consommation propre à l’antenne, contrairement aux antennes actives qui intègrent un \textit{Low Noise Amplifier} (LNA), dont la consommation se situe typiquement entre 3 et 20mA.  Ce dernier permet néanmoins d'obtenir un gain plus élevé pour des dimensions plus compactes. \\
+L’antenne patch passive, dépourvue d’amplification intégrée, impose en revanche une conception RF plus rigoureuse, notamment en raison d’une sensibilité accrue aux désadaptations d’impédance. Par ailleurs, ce type d’antenne nécessite un plan de masse de dimensions suffisantes afin d’assurer un gain satisfaisant ainsi qu’une directivité orientée vers le ciel. Plus ce plan de masse est réduit, plus les performances de l’antenne (gain, efficacité, rayonnement) se dégradent.
 
-V_IO current in software stanby mode @V_IO = 3.3V = 46uA
-
-Time to first fix
-The time to first fix (TTFF) is perhaps one of the better known measures of GPS/GNSS module performance. Counted in seconds, the TTFF calculates the time taken, after power on, to obtain a fix, accurate position and time using four satellites. 
+\begin{figure}[h]
+	\centering	
+	\includegraphics[width=0.25\linewidth]{pictures/GNSS_antenna.jpg}
+	\caption{Image de l'antenne patch chosie pour le récepteur GNSS}
+	\label{fig:gnss_antenna}
+\end{figure}[h]
 
 
--130dBm
+\subsubsection{Performances de l'antenne GNSS choisie}
+Une antenne patch de chez Quectel a été choisie en raison de son imposant plan de masse (40mm x 40mm) (cf. fig \ref{fig:gnss_antenna}). \\
+Ce dernier permet d'avoir une directivité concentrée vers le ciel avec un gain maximale de 0.58dBi comme on peut le voir sur les images en figure \ref{fig:dia_ray} et \ref{fig:directivty}. Comme l'antenne patch sera posé à plat en direction du ciel, tout gain non dirigée vers le ciel est de l'énergie perdue et c'est pour cette raison que cette antenne est très intéressante pour cette application. Cette antenne respecte les exigences GNSS car elle présente un bon compromis entre gain et couverture.
+\begin{figure}[h]
+    \centering
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{pictures/rayonnement_patch.png}
+        \caption{Diagramme de rayonnement de l'antenne à la fréquence de 1575MHz (free space)}
+	\label{fig:dia_ray}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{pictures/directivity.png}
+        \caption{Directivité de l'antenne à Phi=0 degré et à une fréquence de 1575MHz (free space)}
+	\label{fig:directivty}
+    \end{minipage}
+\end{figure}
 
-
-
-% Pour économoniser de l'énergie pendant qu'on est sous l'eau, il existe du modes pour le GNSS :
-% \begin{itemize}
-% 	\item Hardware backup mode : The hardware backup mode allows entering a backup state and resuming operation by switching the main power supplies on and off while maintaining a V_BCKP supply via, e.g. a battery.
-% 	\item Software standby mode : Le Software Standby Mode (UBX-RXM-PMREQ) sur le MAX-M10M est un mode de veille profonde contrôlé par logiciel.  VCC supply is internally disabled to save power. The V_IO supply maintains the battery-backed RAM (BBR), RTC, and PIO. Entering the software standby mode clears the RAM memory including the receiver configuration. To maintain the configuration, store it on BBR ce qui va permettre de redémarrer en warm start si le wakeup se fait via EXTINT pin (wakup via RESET_N ou UART_RX efface la BBR et on fait un cold start).
-% \end{itemize}
-% e warm start nécessite que le BBR (Battery-Backed RAM) conserve les données entre deux sessions : heure, éphémérides, almanach. Sans V_BCKP, le BBR est alimenté via V_IO. Si tu coupes V_IO (ce que le low power implique souvent), le BBR est effacé → cold start forcé.
-
-% Le module GPS choisi est le module MAX-M10S de ublox qui a une sensitivity de -148 dBm (cold start), the minimum signal strength that the gps receiver can detect. The weakest signal that a receiver wil be able to indentify and process. Vue que le module sera souvent immergé, le signal GPS sera coupé et le GPS sera toujours en cold start, donc le pire cas c'est-à-dire -148dBm. Le cold start d'un GNSS signifie que le module GOS démarre sans informations utilise déjà memorisé et doit repartir de zéro pour obtenir une position. C'est-à-dire qu'il n'a plus sa dernière position connue, plus les orbites précises des satellite, plus l'heure précise... Au démarrage, il mettra environ 30s pour connaitre la position (au lieu de 1 à 5s)
-
-% V\_BCKP n'a pas été implémenté et la conséquence est que le GNSS va tjr démarré en cold start. En effet, si l'alimentation principale du GNSS (VCC\_IO) est interrompue, le RTC time et GNSS orbit data in the BBR sont effacées. Or valid time and GNSS orbit data at startup improves positioning
-% performance by enabling hot starts, warm starts (p.73 MAX-M10S Integration Manual)
-
-
-% GNSS receivers typically make a distinction between cold, warm, and hot start based on the type of
-% valid information the receiver has during the restart.
-% • Cold start: in the cold start mode, the receiver has no information from the last position (e.g.
-% time, velocity, frequency etc.) at startup. Therefore, the receiver must search the full time and
-% frequency space, and all possible satellite numbers. If a satellite signal is found, it is tracked
-% to decode the ephemeris (18-36 seconds under strong signal conditions), while the other
-% channels continue to search satellites. Once there is a sufficient number of satellites with
-% valid ephemeris, the receiver can calculate position and velocity data. Other GNSS receiver
-% manufacturers call this the Factory startup mode.
-% • Warm start: in the warm start mode, the receiver has approximate information for time,
-% position, and coarse satellite position data (Almanac). In this mode, the receiver normally needs
-% to download ephemeris after power-up before it can calculate position and velocity data. As the
-% ephemeris data is usually outdated after 4 hours, the receiver typically starts with a warm start
-% if it has been powered down for more than 4 hours. In this scenario, several augmentations are
-% possible. See Multiple GNSS assistance.
-% • Hot start: in the hot start mode, the receiver has been powered down only for a short time (4
-% hours or less), so that its ephemeris is still valid. Since the receiver does not need to download
-% ephemeris again, this is the fastest startup method.
-
+Pour garantir le bon fonctionnement de l'antenne, il ne faut pas seulement regarder son diagramme de rayonnement et sa directivité, mais également son adaptation d'impédance. Ce paramètre permettra de savoir quel est la proportion du signal est réellement capté par le module GNSS. Ce paramètre se mesure avec un \textit{Vector Network Analyzer} (VNA)
 
 \begin{figure}[h]
     \centering
@@ -512,16 +471,26 @@ The time to first fix (TTFF) is perhaps one of the better known measures of GPS/
         \centering
         \includegraphics[width=\linewidth]{pictures/ant-s11.png}
         \caption{Paramètre S11 de l'antenne}
+	\label{fig:s11}
     \end{minipage}
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{pictures/ant-smith.png}
         \caption{Smith Cart de l'antenne}
+	\label{fig:smith_cart}
     \end{minipage}
 \end{figure}
 
+\noindent Selon la figure \ref{fig:s11}, le paramètre S11 à la fréquence de 1.575GHz est de -15.09dB ce qui signifie :
+\begin{equation}
+	S11 = 10 log(\Gamma) = -15.09dB \Leftrightarrow \Gamma = \frac{P_{reflechie}}{P_{transmise}} = 0.03  
+\end{equation}
 
+
+
+% Le paramètre S11, mesuré à l'analyseur de réseau vectoriel et présenté à la figure 6, révèle une résonance nette à 1,5758 GHz, avec un coefficient de réflexion de −15,818 dB. Cette valeur, inférieure au seuil conventionnel de −10 dB, confirme une adaptation d'impédance satisfaisante à la fréquence cible GPS L1 (1575,42 MHz). La bande passante à −10 dB, relativement étroite, est caractéristique des antennes patch résonantes et demeure suffisante pour couvrir l'intégralité de la bande L1.
+% L'abaque de Smith associé (figure 7) complète cette analyse en représentant l'évolution de l'impédance complexe de l'antenne sur la plage de fréquences mesurée. La trajectoire de la courbe passe au voisinage du centre de l'abaque à la fréquence de résonance, indiquant un point d'impédance proche de 50 Ω résistif pur, soit une adaptation optimale à l'impédance caractéristique du système. Les marqueurs positionnés aux fréquences d'intérêt permettent de quantifier la marge d'adaptation sur l'ensemble de la bande utile et confirment la cohérence avec les résultats obtenus sur le paramètre S11.
 \subsection{PCB quelques points importants}
 \subsubsection{Power Supply \& Dissipation Thermique}
 	\subsubsection{Adaptation d'impédance}
