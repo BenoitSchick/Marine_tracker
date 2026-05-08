@@ -25,6 +25,9 @@
 \usepackage{xcolor}
 \usepackage{multirow}
 \usepackage{verbatim}
+\usepackage{bm}
+% \usepackage{gensymb}
+\usepackage{url}
 
 \usepackage{lipsum}  
 
@@ -444,8 +447,9 @@ L’antenne patch passive, dépourvue d’amplification intégrée, impose en re
 
 
 \subsubsection{Performances de l'antenne GNSS choisie}
-Une antenne patch de chez Quectel a été choisie en raison de son imposant plan de masse (40mm x 40mm) (cf. fig \ref{fig:gnss_antenna}). \\
-Ce dernier permet d'avoir une directivité concentrée vers le ciel avec un gain maximale de 0.58dBi comme on peut le voir sur les images en figure \ref{fig:dia_ray} et \ref{fig:directivty}. Comme l'antenne patch sera posé à plat en direction du ciel, tout gain non dirigée vers le ciel est de l'énergie perdue et c'est pour cette raison que cette antenne est très intéressante pour cette application. Cette antenne respecte les exigences GNSS car elle présente un bon compromis entre gain et couverture.
+
+Une antenne patch de chez Quectel a été retenue en raison de son large plan de masse (40 mm x 40 mm) (cf. fig. \ref{fig:gnss_antenna}). Celui-ci permet d’améliorer les performances de l’antenne patch en favorisant une directivité principalement orientée vers le ciel et en augmentant son gain (gain maximale de 0.58dBi), comme illustré aux figures \ref{fig:dia_ray} et \ref{fig:directivty}. \\
+L’antenne patch étant destinée à être montée à plat, orientée vers le ciel, tout rayonnement non dirigé dans cette direction constitue une perte d’énergie. C’est précisément pour cette raison que cette antenne se révèle particulièrement adaptée à l’application visée. Elle satisfait aux exigences GNSS en offrant un bon compromis entre gain et couverture angulaire. \\
 \begin{figure}[h]
     \centering
     \begin{minipage}[b]{0.45\textwidth}
@@ -463,7 +467,7 @@ Ce dernier permet d'avoir une directivité concentrée vers le ciel avec un gain
     \end{minipage}
 \end{figure}
 
-Pour garantir le bon fonctionnement de l'antenne, il ne faut pas seulement regarder son diagramme de rayonnement et sa directivité, mais également son adaptation d'impédance. Ce paramètre permettra de savoir quel est la proportion du signal est réellement capté par le module GNSS. Ce paramètre se mesure avec un \textit{Vector Network Analyzer} (VNA)
+La caractérisation complète d'une antenne ne saurait se limiter à l'analyse du diagramme de rayonnement et de la directivité ; l'adaptation d'impédance constitue également un paramètre fondamental. Ce dernier permet d'évaluer la proportion du signal réellement transmise au module GNSS. Il se mesure à l'aide d'un \textit{Vector Network Analyzer} (VNA).
 
 \begin{figure}[h]
     \centering
@@ -482,28 +486,103 @@ Pour garantir le bon fonctionnement de l'antenne, il ne faut pas seulement regar
     \end{minipage}
 \end{figure}
 
-\noindent Selon la figure \ref{fig:s11}, le paramètre S11 à la fréquence de 1.575GHz est de -15.09dB ce qui signifie :
-\begin{equation}
+\noindent D'après la figure \ref{fig:s11}, le paramètre $S_{11}$ à 1.575GHz vaut -15.09dB, ce qui permet de déterminer le coefficient de réflexion $\Gamma$ :
+\begin{equation}\label{eq:s11}
 	S11 = 10 log(\Gamma) = -15.09dB \Leftrightarrow \Gamma = \frac{P_{reflechie}}{P_{transmise}} = 0.03  
 \end{equation}
 
+Ce résultat indique que \textbf{97\%} de la puissance incidente est transmise au récepteur GNSS, ce qui témoigne d'une excellente adaptation d'impédance. \\
+L'impédance d'entrée de l'antenne peut alors être calculée à partir de $\Gamma$ (équation \ref{eq:s11}) :
+
+\begin{equation}
+	% Z = R + jX = 36.588 + \frac{1}{j\omega C} \Leftrightarrow \lvert Z \rvert = 	
+	Z_{ant} = Z_0 \frac{1+\Gamma}{1-\Gamma} = \bm{53.09\Omega}
+\end{equation}
+
+Cette valeur est proche de l’objectif nominal de 50 $\Omega$. Ce résultat est également visible sur la carte de Smith : le marqueur 3, correspondant à la fréquence GNSS étudiée, est situé à proximité du centre de la carte, zone caractéristique d’une adaptation optimale (absence de réflexion).
+
+Enfin, la figure \ref{fig:s11} permet également d’estimer la bande passante de l’antenne, définie conventionnellement par le critère $S_{11} < -10$ dB. À l’aide des marqueurs 1 et 4, la bande passante obtenue est d’environ \textbf{10.25 MHz}.
 
 
-% Le paramètre S11, mesuré à l'analyseur de réseau vectoriel et présenté à la figure 6, révèle une résonance nette à 1,5758 GHz, avec un coefficient de réflexion de −15,818 dB. Cette valeur, inférieure au seuil conventionnel de −10 dB, confirme une adaptation d'impédance satisfaisante à la fréquence cible GPS L1 (1575,42 MHz). La bande passante à −10 dB, relativement étroite, est caractéristique des antennes patch résonantes et demeure suffisante pour couvrir l'intégralité de la bande L1.
-% L'abaque de Smith associé (figure 7) complète cette analyse en représentant l'évolution de l'impédance complexe de l'antenne sur la plage de fréquences mesurée. La trajectoire de la courbe passe au voisinage du centre de l'abaque à la fréquence de résonance, indiquant un point d'impédance proche de 50 Ω résistif pur, soit une adaptation optimale à l'impédance caractéristique du système. Les marqueurs positionnés aux fréquences d'intérêt permettent de quantifier la marge d'adaptation sur l'ensemble de la bande utile et confirment la cohérence avec les résultats obtenus sur le paramètre S11.
+
 \subsection{PCB quelques points importants}
 \subsubsection{Power Supply \& Dissipation Thermique}
 	\subsubsection{Adaptation d'impédance}
 	\subsubsection{Test points}
+
+
+\section{Annexes}
+
+\subsection{Influence du plan de masse sur les performances d'une antenne patch (Benoit Schick)}
+Afin d’observer l’impact réel du plan de masse sur les performances de l’antenne, il est pertinent de comparer l’antenne patch passive retenue pour ce projet, dotée d’un large plan de masse, à une autre antenne patch passive du même fabricant ne disposant pas de plan de masse.
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.5\linewidth]{pictures/antenne_nul/ant_avecplan.png}
+        \subcaption{Antenne patch avec un plan de masse}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.5\linewidth]{pictures/antenne_nul/ant_sansplan.png}
+        \subcaption{Antenne patch sans plan de masse}
+    \end{minipage}
+    
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pictures/antenne_nul/gain_avecplan.png}
+        \subcaption{Gain de l'antenne avec un plan de masse}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pictures/antenne_nul/gain_sansplan.png}
+        \subcaption{Gain de l'antenne sans plan de masse}
+    \end{minipage}
+    \caption{Influence du plan de masse sur le gain d'une antenne}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pictures/antenne_nul/eff_avecplan.png}
+        \subcaption{Efficacité de l'antenne avec un plan de masse}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pictures/antenne_nul/eff_sansplan.png}
+        \subcaption{Efficacité de l'antenne sans plan de masse}
+    \end{minipage}
+    \caption{Influence du plan de masse sur l'efficacité d'une antenne}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pictures/antenne_nul/dir_avecplan.png}
+        \subcaption{Directivité de l'antenne avec un plan de masse}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pictures/antenne_nul/dir_sansplan.png}
+        \subcaption{Directivité de l'antenne sans plan de masse}
+    \end{minipage}
+    \caption{Influence du plan de masse sur la directivité d'une antenne}
+\end{figure}
+
+
+
+
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
