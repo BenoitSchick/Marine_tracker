@@ -28,6 +28,8 @@
 \usepackage{bm}
 % \usepackage{gensymb}
 \usepackage{url}
+\usepackage{amsmath}
+
 
 \usepackage{lipsum}  
 
@@ -276,28 +278,19 @@ Le module satellite a été externalisé pour des raisons d'encombrement car son
 \end{table}
 
 
-\subsection{Calcul d'autonomie}
+\subsection{Estimation de l'autonomie du système}
 
-L’estimation de l’autonomie du système repose sur l’évaluation de la consommation des différents modules en fonction de leur cycle d’utilisation. Le fonctionnement étant fortement dépendant du comportement de l’animal, une approche basée sur des scénarios typiques d’utilisation est adoptée.
+Le mode de fonctionnement des différents module va fortement dépendre du comportement de l'animal, s'il alterne entre phase immersion et surface. Ces deux phases doivent être détecté par le système pour réveiller par exemple le GPS et le module satellite lors de la surface de l'animal. C'est pour cette raison que le fonctionnement du système repose entièrement sur un capteur de pression qui peut justement distinguer ces deux phases en mesurant la profondeur. \\
 
-Le système alterne entre deux états principaux :
+\noindent Le système alterne donc entre deux états principaux :
 \begin{itemize}
-    \item \textbf{Phase d’immersion} : le microcontrôleur fonctionne en mode basse consommation et seuls les capteurs sont activés périodiquement pour effectuer les mesures.
-    \item \textbf{Phase de surface} : activation du module GPS pour l’acquisition de la position, suivie de l’activation du module satellite pour la transmission des données.
+    \item \textbf{Phase d’immersion} : Les capteurs de température et de pressions sont activés périodiquement pour effectuer les mesures. Les modules GPS et satellite sont en mode low power.
+    \item \textbf{Phase de surface} : activation du module GPS pour l’acquisition de la position, suivie de l’activation du module satellite pour la transmission des données. Seule le capteur de pression effectue des mesures pour déterminer quand l'animal replonge et d'éviter de chercher uniquement des satellite avec le GPS et le module de commmunication.
 \end{itemize}
 
-\subsubsection{Hypothèses de fonctionnement}
+\subsubsection{Calcul de consommation}
 
-Afin d’estimer la consommation moyenne, les hypothèses suivantes sont retenues :
-
-\begin{itemize}
-    \item 1 cycle toutes les 10 minutes (remontée en surface)
-    \item Durée d’acquisition GPS : 30 s
-    \item Durée de transmission satellite : 10 s
-    \item Mesure capteurs toutes les 10 s en immersion
-\end{itemize}
-
-\subsubsection{Consommation des modules}
+Notre système est prévu pour une tortue marine. Si l'on décide de prendre \textbf{une mesure toute les 5min} dans les phases d'immersion, cela correspond à \textbf{une mesure tous les 500m} si l'on considère que celle-ci se déplace à 5km/h. On admet que la tortue sous-marine refais surface \textbf{toutes les heures} en moyenne et restent en surface pendant \textbf{1min} en moyenne. Pendant ces 1min, le module satellite sera activé pour lui laisser le temps qu'un sattelite passe au-dessus pour pouvoir lui transmettre les mesures récoltées. Dans le cas du GPS, il sera activé seulement pendant 5s en warm start (cf. section 1.6 Module GNSS). 
 
 \begin{table}[h]
 \centering
@@ -308,94 +301,64 @@ Afin d’estimer la consommation moyenne, les hypothèses suivantes sont retenue
 \hline\hline
 
 \multirow{3}{*}{Immersion}
-& STM32U5 & Low Power & 50$\mu A$ \\
-& SHT40 & Measurement & 2.2$\mu A$ \\
-& MS5837-30BA & Measurement & 5$\mu A$ \\
-& GPS MAX-M10S & OFF & 0mA \\
-& Module Argos & STOP & 2$\mu A$ \\
+& STM32U5 & Run Mode / Low Power & 2$mA$ / 50$\mu A$ \\
+& SHT40 & Measurement / Low Power & 2.2$\mu A$ / 80 $nA$ \\
+& MS5837-30BA & Measurement / Low Power & 5$\mu A$ / 10 $nA$ \\
+& GPS MAX-M10S & Standby & 45$\mu A$ \\
+& Module Argos & Low Power & 2$\mu A$ \\
 \hline
 
 \multirow{3}{*}{Surface}
-& STM32U5 & Run Mode & 2mA \\
-& SHT40 & Idle & 0.08$\mu A$ \\
-& MS5837-30BA & Measurement & 5$\mu A$ \\
-& GPS MAX-M10S & Tracking/Acquisition & 10mA \\
-& Module Argos & Transmission & 250mA \\
+& STM32U5 & Run Mode & $2mA$ \\
+& SHT40 & Low Power & 80 $nA$ \\
+& MS5837-30BA & Measurement / Low Power & 5$\mu A$ / 10 $nA$ \\
+& GPS MAX-M10S & Tracking/Acquisition & $10mA$\footnote{il s'agit du courant moyen} \\
+& Module Argos & Transmission & $250mA$ \\
 \hline
 
 \end{tabular}
 \label{tab:conso_phases}
 \end{table}
-% \begin{center}
-% \begin{tabular}{|c|l|c|c|c|}
-% \hline
-% \textbf{Phase} & \textbf{Module} & \textbf{Mode} & \textbf{Courant} & \textbf{Durée} \\
-% \hline\hline
 
-% \multirow{3}{*}{Immersion}
-% & STM32U5 & Stop mode & xx µA & continu \\
-% & SHT40 & Mesure périodique & xx µA / mesure & x s toutes x min \\
-% & MS5837-30BA & Mesure périodique & xx µA / mesure & x s toutes x min \\
-% \hline
+\noindent Avec la table \ref{tab:conso_phases} et les timing évoqués plus haut, il est possible d'estimer l'autonomie sachant qu'on dispose d'une batterie LiPo 1S d'une capacité de 10Ah. \\
+Lors des phases d'immersion, le processeur STM32 ainsi que les deux capteurs font des cycles de 5min avec 2s de mesure et le reste en mode low power.:
 
-% \multirow{3}{*}{Surface}
-% & STM32U5 & Run mode & xx mA & x min \\
-% & GPS MAX-M10S & Acquisition GPS & xx mA & x s \\
-% & Module Argos & Transmission & xx mA & x s \\
-% \hline
+% \begin{align}
+% I_{avgImm} &= I_{avgStm} + I_{avgSHT40} + I_{avgMS58} + I_{avgGPS} + I_{avgArgos} \\
+% 	   &= (\frac{2s}{300s} \cdot 2mA + \frac{298s}{300s} \cdot 50\mu A) + (\frac{2s}{300s} \cdot 2.2\mu A + \frac{298s}{300s} \cdot 80nA) + (\frac{2s}{300s} \cdot 5\mu A + \frac{298s}{300s} \cdot 10nA) + 45\mu A + 2\mu A = \bm{0.110 mA} 
+% \end{align}
 
-% \end{tabular}
-% \end{center}
+\begin{align*}
+I_{avgImm}
+    &= I_{avgStm} + I_{avgSHT40} + I_{avgMS58} + I_{avgGPS} + I_{avgArgos} \\
+    &= \left(\frac{2\,\mathrm{s}}{300\,\mathrm{s}} \cdot 2\,\mathrm{mA}
+       + \frac{298\,\mathrm{s}}{300\,\mathrm{s}} \cdot 50\,\mu\mathrm{A}\right) \nonumber\\
+    &\quad + \left(\frac{2\,\mathrm{s}}{300\,\mathrm{s}} \cdot 2.2\,\mu\mathrm{A}
+       + \frac{298\,\mathrm{s}}{300\,\mathrm{s}} \cdot 80\,\mathrm{nA}\right) \nonumber\\
+    &\quad + \left(\frac{2\,\mathrm{s}}{300\,\mathrm{s}} \cdot 5\,\mu\mathrm{A}
+       + \frac{298\,\mathrm{s}}{300\,\mathrm{s}} \cdot 10\,\mathrm{nA}\right) \nonumber\\
+    &\quad + 45\,\mu\mathrm{A} + 2\,\mu\mathrm{A} \\
+    &= \mathbf{0.110\ \mathrm{mA}}
+\end{align*}
 
-\subsubsection{Calcul de la consommation moyenne}
+En surface, l'animal reste pendant 1min toutes les heures, ainsi le courant moyen sur un cycle de 60min pour la phase en surface (on néglige les deux capteurs): 
 
-Sur un cycle de 10 minutes (600 s) :
+\begin{align*}
+I_{avgSur} &= I_{avgStm} + I_{avgGPS} + I_{avgArgos} \\
+	   &= 2mA + \frac{5s}{60s} \cdot 10mA + 250mA \\ 
+	   &= \bm{252.8 mA}
+\end{align*}
 
-\begin{itemize}
-    \item GPS : $25\,mW \times 30\,s = 750\,mJ$
-    \item Satellite : $500\,mW \times 10\,s = 5000\,mJ$
-    \item Capteurs : $1\,mW \times 600\,s = 600\,mJ$
-    \item Microcontrôleur (veille) : négligeable devant les autres contributions
-\end{itemize}
+Ainsi, le courant moyen sur un cycle de 60min :
+\begin{equation}
+	I_{moy} = \frac{59}{60} \cdot I_{avgImm} + \frac{1}{60} \cdot I_{avgSur} = \bm{4.3mA}
+\end{equation}
 
-Énergie totale par cycle :
-\[
-E_{cycle} = 750 + 5000 + 600 = 6350\,mJ
-\]
+Sachant qu'on dispose d'une batterie de 10Ah, alors l'autonomie estimée est d'environ :
+\begin{equation}
+	Autonomie = \frac{10A}{I_{moy}} = \frac{10A}{4.3mA} \approx 2326h \approx 97j \approx \bm{3mois}   
+\end{equation}
 
-Puissance moyenne :
-\[
-P_{moy} = \frac{6350\,mJ}{600\,s} \approx 10.6\,mW
-\]
-
-\subsubsection{Estimation de l’autonomie}
-
-Avec une batterie LiPo de 10 Ah à 3.7 V :
-
-\[
-E_{batt} = 10 \times 3.7 = 37\,Wh
-\]
-
-Autonomie estimée :
-\[
-T = \frac{37\,Wh}{0.0106\,W} \approx 3490\,h \approx 145\,jours
-\]
-
-\subsubsection{Discussion}
-
-Cette estimation montre que l’autonomie théorique du système dépasse largement l’objectif fixé d’un mois. Toutefois, ce calcul repose sur des hypothèses optimistes. En pratique, plusieurs facteurs peuvent réduire significativement cette autonomie :
-
-\begin{itemize}
-    \item temps d’acquisition GPS plus long (conditions de réception dégradées)
-    \item retransmissions en cas d’échec de communication
-    \item consommation réelle supérieure des modules
-    \item pertes liées à la conversion d’énergie
-\end{itemize}
-
-Une marge de sécurité importante doit donc être considérée. Malgré cela, ces résultats confirment la faisabilité du système vis-à-vis de la contrainte d’autonomie.
-
-
-Le maintien de \textbf{V\_IO} permet de conserver la BBR, l'horloge temps réel (RTC) ainsi que les entrées/sorties nécessaires au réveil. Les données utiles au redémarrage sont ainsi préservées tout en réduisant fortement la consommation. Le courant mesuré dans ce mode est de l'ordre de \textbf{46~\textmu A} sous \textbf{3.3 V}.
 
 \subsection{Module GNSS}
 
@@ -409,11 +372,11 @@ Les récepteurs GNSS distinguent trois modes de démarrage selon les information
 disponibles à la mise sous tension :
 
 \begin{itemize}
-    \item \textbf{Cold start} : le récepteur ne dispose d'aucune information préalable (heure, dernière position, et  éphémérides\footnote{Données orbitales précises transmises par les satellites et décrivant leur trajectoire instantanée.}). Il doit alors rechercher les satellites visibles, synchroniser leurs signaux et télécharger les données nécessaires au calcul de position. Cette procédure conduit à un \textit{TTFF}\footnote{\textit{Time To First Fix}, temps nécessaire après la mise sous tension pour obtenir une position et une heure valides à partir d'au moins quatre satellites.} typiquement de l'ordre de 30 secondes.
+    \item \textbf{Cold start} : le récepteur ne dispose d'aucune information préalable (heure, dernière position, et  éphémérides\footnote{Données orbitales précises transmises par les satellites et décrivant leur trajectoire instantanée.}). Il doit alors rechercher les satellites visibles, synchroniser leurs signaux et télécharger les données nécessaires au calcul de position. Cette procédure conduit à un \textit{TTFF}\footnote{\textit{Time To First Fix}, temps nécessaire après la mise sous tension pour obtenir une position et une heure valides à partir d'au moins quatre satellites.} typiquement de l'ordre de 30 secondes et à une sensibilité réduite du récepteur (-148dBm).
 
-    \item \textbf{Warm start} : le récepteur conserve une estimation de l'heure, de la dernière position connue ainsi que des informations globales sur la constellation. Les éphémérides précédemment mémorisées étant généralement plus valides après quelques heures, elles doivent être téléchargées à nouveau. Le \textit{TTFF} est alors réduit à quelques secondes.
+    \item \textbf{Warm start} : le récepteur conserve une estimation de l'heure, de la dernière position connue ainsi que des informations globales sur la constellation. Les éphémérides précédemment mémorisées étant généralement plus valides après quelques heures, elles doivent être téléchargées à nouveau. Le \textit{TTFF} est alors réduit à quelques secondes et le récepteur dispose d'une bien meilleure sensibilité (-165dBm).
 
-    \item \textbf{Hot start} : le récepteur dispose encore de données de navigation récentes et valides, notamment des éphémérides. Le redémarrage est quasi immédiat et ne nécessite pas de téléchargement complémentaire. Pour le module MAX-M10M, le \textit{TTFF} typique est de l'ordre de 1 seconde.
+    \item \textbf{Hot start} : le récepteur dispose encore de données de navigation récentes et valides, notamment des éphémérides. Le redémarrage est quasi immédiat et ne nécessite pas de téléchargement complémentaire. Pour le module MAX-M10M, le \textit{TTFF} typique est de l'ordre de 1 seconde avec une sensibilité de -165dBm.
 \end{itemize}
 
 Les informations utilisées pour accélérer le redémarrage sont conservées dans la \textbf{Battery-Backed RAM (BBR)} du module. En cas de perte d'alimentation de cette mémoire, ces données sont effacées et le module redémarre en \textit{cold start}.
@@ -443,7 +406,7 @@ L’antenne patch passive, dépourvue d’amplification intégrée, impose en re
 	\includegraphics[width=0.25\linewidth]{pictures/GNSS_antenna.jpg}
 	\caption{Image de l'antenne patch chosie pour le récepteur GNSS}
 	\label{fig:gnss_antenna}
-\end{figure}[h]
+\end{figure}
 
 
 \subsubsection{Performances de l'antenne GNSS choisie}
@@ -529,7 +492,6 @@ Afin d’observer l’impact réel du plan de masse sur les performances de l’
         \includegraphics[width=0.5\linewidth]{pictures/antenne_nul/ant_sansplan.png}
         \subcaption{Antenne patch sans plan de masse}
     \end{minipage}
-    
 \end{figure}
 
 \begin{figure}[h]
