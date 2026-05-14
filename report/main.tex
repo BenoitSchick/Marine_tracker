@@ -132,7 +132,7 @@ Or l’autonomie du système constitue un paramètre critique, car elle détermi
 \subsection{Spécifications}
 
 Le comportement de l’animal joue un rôle déterminant dans le dimensionnement du système. En effet, lorsqu’il est immergé, toute communication satellite est impossible. Le dispositif doit donc exploiter les phases de surface, durant lesquelles l’animal doit rester suffisamment longtemps pour permettre l’acquisition d’une position GPS ainsi que la transmission des données via le module satellite. La profondeur de plongée constitue également un paramètre critique, car elle impose des contraintes mécaniques importantes, notamment en raison de la pression exercée sur le boîtier. \\
-Après comparaison avec d’autres espèces (cf. tableau), le choix s’est porté sur la tortue marine. Ce choix repose principalement sur ses phases de surface relativement longues et régulières, qui facilitent l’établissement d’une connexion satellite fiable et limitent les activations inutiles des modules de communication et de localisation. Cela permet ainsi de réduire la consommation énergétique du système tout en simplifiant certaines contraintes mécaniques.\\
+Après comparaison avec d’autres espèces (cf. tableau), le choix s’est porté sur la tortue marine. Ce choix repose principalement sur ses phases de surface relativement régulières, qui facilitent l’établissement d’une connexion satellite fiable et limitent les activations inutiles des modules de communication et de localisation. Cela permet ainsi de réduire la consommation énergétique du système tout en simplifiant certaines contraintes mécaniques.\\
 
 L’autonomie représente un autre enjeu majeur. Le système doit être capable de fonctionner sur une longue durée afin de collecter un volume de données suffisant, tout en permettant idéalement la récupération du dispositif en fin de mission afin de limiter son impact environnemental. Cela implique une gestion optimisée de l’énergie, notamment en réduisant l’utilisation des modules les plus énergivores.\\
 
@@ -343,7 +343,7 @@ I_{avgImm}
 
 $\triangleright$ \textbf{Consommation en phase de surface} \\
 
-\noindent Lorsque l’animal remonte en surface, il y reste environ 1 minute par heure. Durant cette minute, et en négligeant la consommation des capteurs de pression/température, le courant moyen est donné par la somme des contributions du STM32, du GNSS et du module satellite, soit :
+\noindent Lorsque l’animal remonte en surface, il y reste environ 1 minute par heure. Durant cette minute, et en négligeant la consommation des capteurs de pression/température, le courant moyen est donné par la somme des contributions du STM32, du GNSS et du module satellite, soit :
 \begin{align*}
 I_{avgSur} &= I_{avgStm} + I_{avgGPS} + I_{avgArgos} \\
 	   &= 2mA + \frac{5s}{60s} \cdot 10mA + 250mA \\ 
@@ -471,82 +471,153 @@ Cette valeur est proche de l’objectif nominal de 50 $\Omega$. Ce résultat est
 
 Enfin, la figure \ref{fig:s11} permet également d’estimer la bande passante de l’antenne, définie conventionnellement par le critère $S_{11} < -10$ dB. À l’aide des marqueurs 1 et 4, la bande passante obtenue est d’environ \textbf{10.25 MHz}.
 
+\subsection{Conception du PCB}
+La conception du PCB a constitué une étape critique du projet. Une attention particulière a donc été portée au dimensionnement de l’alimentation, à la dissipation thermique et au routage de la piste RF du module GNSS.
+\subsubsection{Dimensionnement de l'alimentation}
+L'alimentation du PCB a été conçue pour supporter les pics de courants des modules de communication satellite et GNSS pouvant atteindre plusieurs centaines de milliampères sur de courtes durées. Si elle est mal dimensionné elle pourrait ne pas fournir ces appels de courants ou alors provoquer des chutes de tension susceptibles d'entrainer des dysfonctionnements. \\
+Le choix des régulateurs, le routage des pistes d'alimentation ainsi que le découplage a été réalisé de manière à garantir une alimentation stable. \\
 
 
-\subsection{PCB quelques points importants}
-\subsubsection{Power Supply \& Dissipation Thermique}
-	\subsubsection{Adaptation d'impédance}
-	\subsubsection{Test points}
+\begin{table}[h]
+\centering
+\caption{Pics de courants des modules satellite et GNSS}
+\begin{tabular}{|c|l|}
+\hline
+\textbf{Module} & \textbf{Peak current} \\ 
+\hline\hline
+Satellite & 400mA \\
+GNSS & 100mA \\
+\hline
+\end{tabular}
+\label{tab:peak_current}
+\end{table}
 
+Le régulateur MCP1726 a ainsi été sélectionné pour sa capacité à fournir jusqu'à 1A, garantissant ainsi une marge suffisante face aux pics de courant estimés à 500mA. Il convient également de vérifier que le package retenu permet de dissiper correctement la chaleur générée, sans dépasser la température de jonction maximale admissible de 125°C (valeur tirée de la datasheet). \\ 
 
+\noindent La puissance dissipée en interne par le LDO est donnée par :
+\begin{equation}\label{eq:pLDO}
+	P_{LDO} = (V_{IN(max)} - V_{OUT}) \times I_{OUT(max)} = (4.2V - 3.3V) \times 500mA = 0.45W	
+\end{equation}
+La température de jonction $T_J$ est calculée selon la formule issue de la datasheet :
+\begin{equation}\label{eq:tj}
+    T_J = T_A(\text{max}) + P_{LDO} \times R\theta_{JA}
+\end{equation}
+où $R\theta_{JA}$ est la résistance thermique junction-to-ambiant, exprimée en $^{\circ}C/W$, et $T_{A(max)}= 70^{\circ}C$, la température ambiante maximale supposée. \\
+
+\noindent Deux packages sont disponibles pour le MCP1726 : le SOIC et le DFN. Seule ce dernier, qui dispose d'une résistance thermique bien inférieure (car il dispose d'un pad thermique) permet de respecter un température de jonction inférieur au 125$^{\circ}C$ spécifié. \\
+
+\noindent Selon l'équation \ref{eq:tj}, la température de jonction atteint avec un boitier DFN de résistance thermique $R\theta_{JA} = 64^{\circ}C/W$ se calcul ainsi :
+\begin{equation}
+	T_J =	T_{JRISE} + T_A(max) = 0.45W \times 64^{\circ}C/W + 70^{\circ} C = 98.8^{\circ}C 
+\end{equation}
+Ainsi le package DFN est retenu, car il est le seul à garantir une température de jonction inférieure à 125$^{\circ}C$
+
+\begin{figure}[h]
+	\centering	
+	\includegraphics[width=0.4\linewidth]{pictures/layoutLDO.png}
+	\caption{Layout du régulateur LDO de sorte à assurer une bonne dissipation thermique}
+	\label{fig:layoutLDO}
+\end{figure}
+
+\subsubsection{Layout du module GNSS}
+Le signal reçu par le module GNSS est extrêmement faible, de l'ordre de −160dBm. La conception du layout RF constitue donc un point critique du PCB : toute perte ou perturbation sur la ligne RF peut dégrader significativement la sensibilité du récepteur et allonger le temps d'acquisition du signal. \\
+Une attention particulière a été portée au routage de la liaison entre l'antenne et l'entrée RF du module. Cette ligne a été conçue comme une \textbf{ligne à impédance contrôlée de 50$\Omega$}  en utilisant une topologie \textit{Coplanar Waveguide with Ground} (CPWG), afin d'assurer un transfert de puissance optimal et de minimiser les réflexions. \\
+
+\begin{figure}[h]
+	\centering	
+	\includegraphics[width=0.4\linewidth]{pictures/layoutGNSS.png}
+	\caption{Layout du module GNSS}
+	\label{fig:layoutGNSS}
+\end{figure}
+
+\subsubsection{Points de tests}
+Enfin, plusieurs points de test ont été intégrés sur le PCB afin de faciliter l’accès aux principales alimentations, interfaces de communication et signaux critiques, simplifiant les mesures à l’oscilloscope ainsi que les phases de diagnostic.
+
+\newpage
 \section{Annexes}
 
-\subsection{Influence du plan de masse sur les performances d'une antenne patch (Benoit Schick)}
-Afin d’observer l’impact réel du plan de masse sur les performances de l’antenne, il est pertinent de comparer l’antenne patch passive retenue pour ce projet (Digikey part number: 2958-YFGA225E3BM-ND), dotée d’un large plan de masse, à une autre antenne patch passive (Digikey part number: 2958-YFGA012E3BM-ND) du même fabricant disposant d'un plan de masse plus réduit.
+% \subsection{Influence du plan de masse sur les performances d'une antenne patch (Benoit Schick)}
+% Afin d’observer l’impact réel du plan de masse sur les performances de l’antenne, il est pertinent de comparer l’antenne patch passive retenue pour ce projet (Digikey part number: 2958-YFGA225E3BM-ND), dotée d’un large plan de masse, à une autre antenne patch passive (Digikey part number: 2958-YFGA012E3BM-ND) du même fabricant disposant d'un plan de masse plus réduit.
 
-\begin{figure}[h]
-    \centering
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.5\linewidth]{pictures/antenne_nul/ant_avecplan.png}
-        \subcaption{Antenne patch avec un plan de masse}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.5\linewidth]{pictures/antenne_nul/ant_sansplan.png}
-        \subcaption{Antenne patch sans plan de masse}
-    \end{minipage}
+% \begin{figure}[h]
+%     \centering
+%     \begin{minipage}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=0.5\linewidth]{pictures/antenne_nul/ant_avecplan.png}
+%         \subcaption{Antenne patch avec un plan de masse}
+%     \end{minipage}
+%     \hfill
+%     \begin{minipage}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=0.5\linewidth]{pictures/antenne_nul/ant_sansplan.png}
+%         \subcaption{Antenne patch sans plan de masse}
+%     \end{minipage}
+% \end{figure}
+
+% \begin{figure}[h]
+%     \centering
+%     \begin{minipage}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{pictures/antenne_nul/gain_avecplan.png}
+%         \subcaption{Gain de l'antenne avec un plan de masse}
+%     \end{minipage}
+%     \hfill
+%     \begin{minipage}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{pictures/antenne_nul/gain_sansplan.png}
+%         \subcaption{Gain de l'antenne sans plan de masse}
+%     \end{minipage}
+%     \caption{Influence du plan de masse sur le gain d'une antenne}
+% \end{figure}
+
+
+% \begin{figure}[h]
+%     \centering
+%     \begin{minipage}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{pictures/antenne_nul/eff_avecplan.png}
+%         \subcaption{Efficacité de l'antenne avec un plan de masse}
+%     \end{minipage}
+%     \hfill
+%     \begin{minipage}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{pictures/antenne_nul/eff_sansplan.png}
+%         \subcaption{Efficacité de l'antenne sans plan de masse}
+%     \end{minipage}
+%     \caption{Influence du plan de masse sur l'efficacité d'une antenne}
+% \end{figure}
+
+
+% \begin{figure}[h]
+%     \centering
+%     \begin{minipage}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{pictures/antenne_nul/dir_avecplan.png}
+%         \subcaption{Directivité de l'antenne avec un plan de masse}
+%     \end{minipage}
+%     \hfill
+%     \begin{minipage}{0.45\textwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{pictures/antenne_nul/dir_sansplan.png}
+%         \subcaption{Directivité de l'antenne sans plan de masse}
+%     \end{minipage}
+%     \caption{Influence du plan de masse sur la directivité d'une antenne}
+% \end{figure}
+
+\subsection{Schematic}
+
+\begin{figure}[h!]
+	\centering	
+	\includegraphics[width=\linewidth]{pictures/schematic.png}
+	\caption{Schéma du circuit}
 \end{figure}
 
-\begin{figure}[h]
-    \centering
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{pictures/antenne_nul/gain_avecplan.png}
-        \subcaption{Gain de l'antenne avec un plan de masse}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{pictures/antenne_nul/gain_sansplan.png}
-        \subcaption{Gain de l'antenne sans plan de masse}
-    \end{minipage}
-    \caption{Influence du plan de masse sur le gain d'une antenne}
-\end{figure}
+\subsection{PCB}
 
-
-\begin{figure}[h]
-    \centering
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{pictures/antenne_nul/eff_avecplan.png}
-        \subcaption{Efficacité de l'antenne avec un plan de masse}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{pictures/antenne_nul/eff_sansplan.png}
-        \subcaption{Efficacité de l'antenne sans plan de masse}
-    \end{minipage}
-    \caption{Influence du plan de masse sur l'efficacité d'une antenne}
-\end{figure}
-
-
-\begin{figure}[h]
-    \centering
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{pictures/antenne_nul/dir_avecplan.png}
-        \subcaption{Directivité de l'antenne avec un plan de masse}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{pictures/antenne_nul/dir_sansplan.png}
-        \subcaption{Directivité de l'antenne sans plan de masse}
-    \end{minipage}
-    \caption{Influence du plan de masse sur la directivité d'une antenne}
+\begin{figure}[h!]
+	\centering	
+	\includegraphics[width=0.7\linewidth]{pictures/vue3D_PCB.png}
+	\caption{Vue 3D du PCB}
 \end{figure}
 
 
