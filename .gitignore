@@ -72,7 +72,6 @@ fp-info-cache
 *.nlo
 *.nls
 *.out
-*.pdf
 *.pyg
 *.run.xml
 *.snm
